@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace ProjectManagerLogic;
+﻿namespace ProjectManagerLogic;
 
 public class Project {
 
@@ -9,9 +6,9 @@ public class Project {
     
         private string Description { get; set; }
     
-        //private Members Lead {get; set;}
-        //private List<Members> Members = new List<Members>();
-        //private List<Risk> Risks = new List<Risk>();
+        private User Lead {get; set;}
+        private List<User> Members = new List<User>();
+        private List<Risk> Risks = new List<Risk>();
     
         private DateTime startDate { get; set; }
         private DateTime endDate { get; set; }
@@ -20,16 +17,55 @@ public class Project {
         
         private Priority projectPriority { get; set; }
     
-        //private List<Requirement> functionalRequirements = new List<Requirement>();
-        //private List<Requirement> nonfunctionalRequirements = new List<Requirement>();
+        private List<Requirement> functionalRequirements = new List<Requirement>();
+        private List<Requirement> nonfunctionalRequirements = new List<Requirement>();
     
-        //private List<Activity> Activities = new List<Activity>();
+        private List<Activity> Activities = new List<Activity>();
 
         private string errorMessage { get; set; }
 
     #endregion
+    
+    
+    
+    #region Helper Methods
 
-    #region PREQ Methods
+        public User FindUserByName(string name) {
+            
+            // If statement to determine that string is not empty
+            // Foreach loop traversing through list of members
+            // If found return member
+            // Otherwise return new user with errorMessage
+            
+
+            return new User();
+            // Error User should be considered
+        }
+        
+        // Master list of users should be considered
+
+        public Risk FindRiskByDescription(string descriptor) {
+
+            // Traverse through risk list
+            
+            return new Risk();
+            //Error Risk should be considered
+        }
+
+        public Risk FindRiskBySeverity(Priority severity) {
+
+            // Traverse through risk list
+            
+            return new Risk();
+        }
+        
+    
+    #endregion
+
+    
+    
+    #region Required Methods
+    
         public string SetDescription(string input) {
 
             if (input.Length > 5000) {
@@ -41,13 +77,52 @@ public class Project {
         }
         // PREQ-1.1
         
-        /*public string SetProjectOwner(Member newLead) {
+        public string SetProjectOwner(User newLead) {
             
+            // Helper method Finds user
             
+            return "";
          }
          // PREQ-1.2
-         */
+         
+         #region Project Member Methods
 
+            public string AddProjectMember(User Member) {
+                
+                // Will most likely need to access a master list for this
+
+                return "Member added successfully!";
+            }
+
+            public string RemoveProjectMember(User Member) {
+
+                // Find user by name
+                
+                return "Member removed successfully";
+            }
+            
+         #endregion
+         // PREQ-1.3
+         
+         
+         #region Project Risk Methods
+
+            public string AddProjectRisk(string description, Priority riskLevel) {
+
+                return "Risk added successfully";
+            }
+
+            public string RemoveProjectRisk(Risk removeeRisk) {
+
+                
+                
+                return "Risk successfully removed!";
+            }
+         
+         #endregion
+         //PREQ-1.4
+         
+         
         public string AssignDate(bool start, DateTime anotherDay) {
 
             if (start) {
@@ -77,15 +152,15 @@ public class Project {
 
             switch (newStatus.ToUpper()) {
                 case "NOT STARTED":
-                    projectStatus = Status.Not_Started;
+                    projectStatus = Status.NotStarted;
                     break;
                 
                 case "IN PROGRESS":
-                    projectStatus = Status.In_Progress;
+                    projectStatus = Status.InProgress;
                     break;
                 
                 case "ON HOLD":
-                    projectStatus = Status.On_Hold;
+                    projectStatus = Status.OnHold;
                     break;
                 
                 case "COMPLETED":
@@ -127,23 +202,25 @@ public class Project {
 
             return "Priority changed successfully!";
         }
+        //PREQ-1.7
+        
+        
+        
+        #region Project Requirement Methods
+        
+            //Methods TBA
+            
+        #endregion
+        //PREQ-2
 
+        
+        
+        
         public void GenerateReport(bool effort) {
             
         }
         //PREQ-4.1 & 4.2
         
         #endregion
-        
-    #region Selction Methods
-    
-        /*public Member FindMemberByName(string name) {
-            // If statement to determine that string is not empty
-            // Implement a foreach loop traversing through members list
-            // If found return member
-            // Otherwise, errorMessage in member should be populated
-         } */
-    
-    #endregion
 
 }
