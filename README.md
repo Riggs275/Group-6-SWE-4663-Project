@@ -37,7 +37,7 @@ This project is split up into 3 modules:
 
 ### Visualization
 
-<img src="Images/SWE 4663 Class Diagram v2.png" alt="A class diagram indicating the projects architecture" style="zoom;" />
+<img src="Images/SWE 4663 Project Class Diagram v3.png" alt="A class diagram indicating the projects architecture" style="zoom;" />
 
 
 
