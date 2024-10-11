@@ -148,7 +148,7 @@ public class Project {
         }
         // PREQ-1.5
 
-        public string changeStatus(string newStatus) {
+        public string ChangeProjectStatus(string newStatus) {
 
             switch (newStatus.ToUpper()) {
                 case "NOT STARTED":
@@ -176,7 +176,7 @@ public class Project {
         }
         //PREQ-1.6
         
-        public string changePriortity(string newPriority) {
+        public string ChangeProjectPriortity(string newPriority) {
 
             switch (newPriority.ToUpper()) {
                 case "LOW":
