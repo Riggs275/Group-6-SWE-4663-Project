@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagerLogic", "ProjectManagerLogic\ProjectManagerLogic.csproj", "{53A1796A-774D-4921-8D96-11D9D341D58A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectLogicUnitTests", "ProjectLogicUnitTests\ProjectLogicUnitTests.csproj", "{84D1D377-3695-4BA3-96D0-C620A1BCC5BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{53A1796A-774D-4921-8D96-11D9D341D58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53A1796A-774D-4921-8D96-11D9D341D58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53A1796A-774D-4921-8D96-11D9D341D58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D1D377-3695-4BA3-96D0-C620A1BCC5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D1D377-3695-4BA3-96D0-C620A1BCC5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D1D377-3695-4BA3-96D0-C620A1BCC5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D1D377-3695-4BA3-96D0-C620A1BCC5BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
