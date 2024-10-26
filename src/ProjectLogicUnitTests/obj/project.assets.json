@@ -381,6 +381,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ProjectManagerLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ProjectManagerLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProjectManagerLogic.dll": {}
+        }
       }
     }
   },
@@ -974,6 +984,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ProjectManagerLogic/1.0.0": {
+      "type": "project",
+      "path": "../ProjectManagerLogic/ProjectManagerLogic.csproj",
+      "msbuildProject": "../ProjectManagerLogic/ProjectManagerLogic.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -982,6 +997,7 @@
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
       "NUnit3TestAdapter >= 4.2.1",
+      "ProjectManagerLogic >= 1.0.0",
       "coverlet.collector >= 6.0.0"
     ]
   },
@@ -1017,7 +1033,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Semester Project\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
+              "projectPath": "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Semester Project\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

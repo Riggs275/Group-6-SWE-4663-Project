@@ -7,8 +7,8 @@ public class Project {
         private string Description { get; set; }
     
         private User Lead {get; set;}
-        private List<User> Members = new List<User>();
-        private List<Risk> Risks = new List<Risk>();
+        private List<User> Members;
+        private List<Risk> Risks;
     
         private DateTime startDate { get; set; }
         private DateTime endDate { get; set; }
@@ -17,8 +17,8 @@ public class Project {
         
         private Priority projectPriority { get; set; }
     
-        private List<Requirement> functionalRequirements = new List<Requirement>();
-        private List<Requirement> nonfunctionalRequirements = new List<Requirement>();
+        private List<Requirement> functionalRequirements;
+        private List<Requirement> nonfunctionalRequirements;
     
         private List<Activity> Activities = new List<Activity>();
 
@@ -69,7 +69,8 @@ public class Project {
         public string SetDescription(string input) {
 
             if (input.Length > 5000) {
-                errorMessage = "Error! Description length cannot exceed 5,000 characters!";
+                errorMessage = "Description length cannot exceed 5,000 characters!";
+                return errorMessage;
             }
 
             Description = input;
@@ -80,8 +81,10 @@ public class Project {
         public string SetProjectOwner(User newLead) {
             
             // Helper method Finds user
+
+            Lead = newLead;
             
-            return "";
+            return ("Project owner set to");
          }
          // PREQ-1.2
          
@@ -90,36 +93,88 @@ public class Project {
             public string AddProjectMember(User Member) {
                 
                 // Will most likely need to access a master list for this
+                
+                Members.Add(Member);
 
-                return "Member added successfully!";
+                return ("Member " + /*User name +*/ " added successfully!");
             }
 
             public string RemoveProjectMember(User Member) {
 
                 // Find user by name
+
+                if (Members.Contains(Member)) {
+                    Members.Remove(Member);
+                    return ("Member " + /*User name +*/ " removed successfully!");
+                }
                 
-                return "Member removed successfully";
+                
+                return ("Member " + /*User name +*/ " could not be found");
             }
-            
-         #endregion
+
+            public string DisplayProjectMembers() {
+
+                string finalList = "";
+
+                if (Members.Count() <= 0) {
+                    foreach (User teamMember in Members) { }
+                }
+
+                return finalList;
+            }
+
+            #endregion
          // PREQ-1.3
          
          
          #region Project Risk Methods
 
-            public string AddProjectRisk(string description, Priority riskLevel) {
+            public string AddProjectRisk(Risk AddedRisk) {
 
+                Risks.Add(AddedRisk);
                 return "Risk added successfully";
             }
 
             public string RemoveProjectRisk(Risk removeeRisk) {
 
-                
-                
-                return "Risk successfully removed!";
+                if (Risks.Contains(removeeRisk)) {
+                    Risks.Remove(removeeRisk);
+                    return "Risk successfully removed!";
+                }
+
+                errorMessage = ("The risk " + removeeRisk.GetName() + " is not in the risk list.");
+                return errorMessage;
             }
-         
-         #endregion
+
+            public string DisplayRisksByCondition() {
+                
+                if (Risks.Count() <= 0) {
+                    errorMessage = "There are no risks in the risk list.";
+                    return errorMessage;
+                }
+
+                string finalList = "";
+                string[] riskStatuses = { "Active", "Mitigated", "Resolved" };
+
+                for (int i = 0; i < 3; i++) {
+                    
+                    finalList += (riskStatuses[i] + "\n\n");
+                    
+                    foreach (Risk threat in Risks) {
+                        
+                        if ((int)threat.GetRiskStatus() == (i + 7)) {
+                            finalList += (threat.GetName() + "\n");
+                        }
+                        
+                    }
+
+                    finalList += "\n\n";
+                }
+
+                return finalList;
+            }
+
+            #endregion
          //PREQ-1.4
          
          
@@ -129,19 +184,19 @@ public class Project {
                  // If start is true, method works with start date
                  if(DateTime.Compare(anotherDay, endDate) >= 0) {
                      errorMessage = "Start date must be earlier than end date!";
+                     return errorMessage;
                  }
-                 else {
-                     startDate = anotherDay;
-                 }
+                 
+                 startDate = anotherDay;
             }
             else {
                 // If start is false, method works with end date
                 if (DateTime.Compare(anotherDay, startDate) <= 0) {
                     errorMessage = "End date must be later than start date!";
+                    return errorMessage;
                 }
-                else {
-                    endDate = anotherDay;
-                }
+                
+                endDate = anotherDay;
             }
            
             return "New start date successfully assigned!";
@@ -174,7 +229,7 @@ public class Project {
             
             return "Status successfully changed!";
         }
-        //PREQ-1.6
+        // PREQ-1.6
         
         public string ChangeProjectPriortity(string newPriority) {
 
@@ -202,17 +257,33 @@ public class Project {
 
             return "Priority changed successfully!";
         }
-        //PREQ-1.7
+        // PREQ-1.7
         
         
         
         #region Project Requirement Methods
-        
-            //Methods TBA
-            
+
+            public void AddRequirement(bool functional, Requirement addeeRequirement) {
+
+                if (functional == true) {
+                    functionalRequirements.Add(addeeRequirement);
+                }
+                else {
+                    nonfunctionalRequirements.Add(addeeRequirement);
+                }
+            }
+            // PREQ-2.1 and 2.2
+                
         #endregion
         //PREQ-2
 
+
+        public void GetTotalProjectTime() {
+
+            foreach (Activity part in Activities) {
+                
+            }
+        }
         
         
         
