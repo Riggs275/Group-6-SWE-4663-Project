@@ -4,9 +4,16 @@ public class Risk {
     
     #region Attributes
     
-        private string riskName { get; set; }
+        public string riskName { 
+            get; 
+            private set; 
+        }
         private string Description { get; set; }
-        private Status Condition { get; set; }
+        public Status Condition {
+            get; 
+            private set;
+        }
+        public bool isSuccess { get; set; }
         private string errorMessage { get; set; }
         
     #endregion
@@ -52,17 +59,6 @@ public class Risk {
     
     #endregion
     
-    #region Getter Methods
-
-        public string GetName() {
-            return riskName;
-        }
-
-        public Status GetRiskStatus() {
-            return Condition;
-        }
-    
-    #endregion
     
     #region Unrequired (but not unnecessary) Methods
 

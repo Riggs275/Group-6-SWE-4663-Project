@@ -7,7 +7,7 @@ public class Project {
         private string Description { get; set; }
     
         private User Lead {get; set;}
-        private List<User> Members;
+        private List<User> Members = new List<User>();
         private List<Risk> Risks;
     
         private DateTime startDate { get; set; }
@@ -80,44 +80,56 @@ public class Project {
         
         public string SetProjectOwner(User newLead) {
             
-            // Helper method Finds user
-
-            Lead = newLead;
+            if (newLead.isSuccess == false) {
+                errorMessage = "This user could not be found.";
+                return errorMessage;
+            }
             
-            return ("Project owner set to");
+            Lead = newLead;
+            return ("Project owner set to " + Lead.GetFullName() + "!");
          }
          // PREQ-1.2
          
          #region Project Member Methods
 
             public string AddProjectMember(User Member) {
-                
-                // Will most likely need to access a master list for this
+
+                if (!Member.isSuccess) {
+                    errorMessage = "This user could not be found.";
+                    return errorMessage;
+                }
                 
                 Members.Add(Member);
-
-                return ("Member " + /*User name +*/ " added successfully!");
+                return (Member.GetFullName() + " has successfully been added as a member!");
             }
 
             public string RemoveProjectMember(User Member) {
 
-                // Find user by name
+                if (!Member.isSuccess) {
+                    errorMessage = "This user could not be found.";
+                    return errorMessage;
+                }
 
                 if (Members.Contains(Member)) {
                     Members.Remove(Member);
-                    return ("Member " + /*User name +*/ " removed successfully!");
+                    return (Member.GetFullName() + " has successfully been removed from members!");
                 }
                 
                 
-                return ("Member " + /*User name +*/ " could not be found");
+                return (Member.GetFullName() + " is not a member for this project.");
             }
 
             public string DisplayProjectMembers() {
 
                 string finalList = "";
 
-                if (Members.Count() <= 0) {
-                    foreach (User teamMember in Members) { }
+                if (Members.Count() == 0) {
+                    foreach (User teamMember in Members) {
+                        finalList += (teamMember + "\n");
+                    }
+                }
+                else {
+                    finalList = "There are no users for the project.";
                 }
 
                 return finalList;
@@ -142,7 +154,7 @@ public class Project {
                     return "Risk successfully removed!";
                 }
 
-                errorMessage = ("The risk " + removeeRisk.GetName() + " is not in the risk list.");
+                errorMessage = ("The risk " + removeeRisk.riskName + " is not in the risk list.");
                 return errorMessage;
             }
 
@@ -162,8 +174,8 @@ public class Project {
                     
                     foreach (Risk threat in Risks) {
                         
-                        if ((int)threat.GetRiskStatus() == (i + 7)) {
-                            finalList += (threat.GetName() + "\n");
+                        if ((int)threat.Condition == (i + 7)) {
+                            finalList += (threat.riskName + "\n");
                         }
                         
                     }
