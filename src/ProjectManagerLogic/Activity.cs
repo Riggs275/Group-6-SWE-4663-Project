@@ -3,13 +3,13 @@ namespace ProjectManagerLogic;
 using System;
 using System.Collections.Generic;
 
-class Activity
+class ActivityEntry
 {
     public string ActivityName { get; set; }
     public DateTime EstimatedTime { get; set; }
     public List<TimeLogEntry> TotalTime { get; set; }
 
-    public Activity(string activityName, DateTime estimatedTime)
+    public ActivityEntry(string activityName, DateTime estimatedTime)
     {
         ActivityName = activityName;
         EstimatedTime = estimatedTime;
@@ -22,11 +22,11 @@ class Activity
     }
 }
 
-class ActivityManager
+class Activity
 {
-    private List<Activity> activities = new List<Activity>();
+    private List<ActivityEntry> activities = new List<ActivityEntry>();
 
-    public void AddActivity(Activity activity)
+    public void AddActivity(ActivityEntry activity)
     {
         activities.Add(activity);
         Console.WriteLine($"Activity added: {activity.ActivityName}");
@@ -44,8 +44,8 @@ class ActivityManager
         return false;
     }
 
-    public List<Activity> ListActivities()
+    public List<ActivityEntry> ListActivities()
     {
-        return new List<Activity>(activities);
+        return new List<ActivityEntry>(activities);
     }
 }
