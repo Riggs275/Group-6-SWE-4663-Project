@@ -13,8 +13,8 @@ class ActivityUnitTest
 
     private void TestAddActivity()
     {
-        Activity manager = new Activity();
-        ActivityEntry process = new ActivityEntry("Process", DateTime.Now);
+        Activity manager = new Activity("Manager", DateTime.Now);
+        Activity process = new Activity("Process", DateTime.Now);
 
         manager.AddActivity(process);
         var activities = manager.ListActivities();
@@ -25,8 +25,8 @@ class ActivityUnitTest
 
     private void TestRemoveActivity()
     {
-        Activity manager = new Activity();
-        ActivityEntry export = new ActivityEntry("Export", DateTime.Now);
+        Activity manager = new Activity("Manager", DateTime.Now);
+        Activity export = new Activity("Export", DateTime.Now);
 
         manager.AddActivity(export);
         bool removed = manager.RemoveActivity("Export");
@@ -38,8 +38,8 @@ class ActivityUnitTest
 
     private void TestListActivities()
     {
-        Activity manager = new Activity();
-        ActivityEntry save = new ActivityEntry("Save", DateTime.Now);
+        Activity manager = new Activity("Manager", DateTime.Now);
+        Activity save = new Activity("Save", DateTime.Now);
 
         manager.AddActivity(save);
 
