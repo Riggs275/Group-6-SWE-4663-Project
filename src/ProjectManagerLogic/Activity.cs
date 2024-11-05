@@ -3,30 +3,27 @@ namespace ProjectManagerLogic;
 using System;
 using System.Collections.Generic;
 
-class ActivityEntry
+class Activity
 {
     public string ActivityName { get; set; }
     public DateTime EstimatedTime { get; set; }
-    public List<TimeLogEntry> TotalTime { get; set; }
+    public List<TimeLog> TotalTime { get; set; }
 
-    public ActivityEntry(string activityName, DateTime estimatedTime)
+    private List<Activity> activities = new List<Activity>();
+
+    public Activity(string activityName, DateTime estimatedTime)
     {
         ActivityName = activityName;
         EstimatedTime = estimatedTime;
-        TotalTime = new List<TimeLogEntry>();
+        TotalTime = new List<TimeLog>();
     }
 
-    public void AddTimeLog(TimeLogEntry timeLog)
+    public void AddTimeLog(TimeLog timeLog)
     {
         TotalTime.Add(timeLog);
     }
-}
 
-class Activity
-{
-    private List<ActivityEntry> activities = new List<ActivityEntry>();
-
-    public void AddActivity(ActivityEntry activity)
+    public void AddActivity(Activity activity)
     {
         activities.Add(activity);
         Console.WriteLine($"Activity added: {activity.ActivityName}");
@@ -44,8 +41,8 @@ class Activity
         return false;
     }
 
-    public List<ActivityEntry> ListActivities()
+    public List<Activity> ListActivities()
     {
-        return new List<ActivityEntry>(activities);
+        return new List<Activity>(activities);
     }
 }
