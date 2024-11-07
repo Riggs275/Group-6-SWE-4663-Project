@@ -13,7 +13,6 @@ public class Risk {
             get; 
             private set;
         }
-        public bool isSuccess { get; set; }
         private string errorMessage { get; set; }
         
     #endregion
