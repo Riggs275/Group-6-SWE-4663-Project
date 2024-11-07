@@ -18,7 +18,14 @@ public class User
 
     public User()
     {
-
+        firstName = string.Empty;
+        middleInitial = string.Empty;
+        lastName = string.Empty;
+        username = string.Empty;
+        password = string.Empty;
+        role = new Role();
+        roleDescription = string.Empty;
+        errorMessage = string.Empty;
     }
     //constructor
     public User(string fN, string mI, string lN, Role job)
@@ -27,6 +34,10 @@ public class User
         middleInitial = mI;
         lastName = lN;
         role = job;
+        username = string.Empty;
+        password = string.Empty;
+        roleDescription = string.Empty;
+        errorMessage = string.Empty;
     }
 
     //sets new firstName middle initial and lastName
@@ -70,5 +81,21 @@ public class User
         User foundUser = new User();
         //line connecting to database to run through and search for a user based on the input username, should also be in the database connecting class
         return foundUser;
+    }
+    public string GetFullName()
+    {
+
+        string name = "";
+
+        if (string.IsNullOrEmpty(middleInitial))
+        {
+            name = (firstName + " " + lastName);
+        }
+        else
+        {
+            name = (firstName + " " + middleInitial + ". " + lastName);
+        }
+
+        return name;
     }
 }

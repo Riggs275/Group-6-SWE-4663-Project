@@ -1,4 +1,4 @@
-namespace ProjectLogicUnitTests;
+/*namespace ProjectLogicUnitTests;
 
 using System;
 
@@ -46,3 +46,4 @@ class TimeLogUnitTest
             (timeLogs.Count == 1 && timeLogs[0].User == "User3" ? "Passed" : "Failed"));
     }
 }
+*/

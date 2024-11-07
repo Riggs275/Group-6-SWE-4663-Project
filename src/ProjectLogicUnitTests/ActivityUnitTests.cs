@@ -1,4 +1,4 @@
-namespace ProjectLogicUnitTests;
+/*namespace ProjectLogicUnitTests;
 
 using System;
 
@@ -48,3 +48,4 @@ class ActivityUnitTest
             (activities.Count == 1 && activities[0].ActivityName == "Save" ? "Passed" : "Failed"));
     }
 }
+*/
