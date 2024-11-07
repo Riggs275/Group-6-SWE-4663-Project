@@ -6,22 +6,22 @@ public class ProjectUnitTests {
     [Test]
     public void SetDescription_ProperValueDescription_ReturnsSuccess() {
         
-        //Arrange
+        // Arrange
         const string description = "";
         const string expected = "Description saved successfully!";
         Project testProject = new Project();
         
-        //Act
+        // Act
         string result = testProject.SetDescription(description);
         
-        //Assert
+        // Assert
         Assert.That(result.Equals(expected));
     }
     
     [Test]
     public void SetDescription_ExceededCharacterLimitDescription_ReturnsError() {
         
-        //Arrange
+        // Arrange
         const string description = ("9quXXnkFcN2jupWbme7DbxLYFjrFKWC6n2TJSjt0d9Eg176KmLx78BtgBf5pFejeQdV0AFnFqYU17" + 
                                     "YJQZ6QuGVqCR4prUtP9gc2Eg12a1rUmDhVnmjv42P9b8JKfbrRTWiggVtvRv4aqKxMBU7Uev94DKW" +
                                     "LAmqVp46ZB66P8zFaxY3MafKz4dSXt6jmHLXLtymtRPRN065fVYCUb1dCScXS2dQQmEJtM2zamZPM" +
@@ -91,142 +91,106 @@ public class ProjectUnitTests {
         const string expected = "Description length cannot exceed 5,000 characters!";
         Project testProject = new Project();
         
-        //Act
+        // Act
         string result = testProject.SetDescription(description);
         
-        //Assert
+        // Assert
         Assert.That(result.Equals(expected));
     }
     
     [Test]
     public void SetProjectOwner_ValidUser_ReturnsSuccess() {
         
-        //Arrange
+        // Arrange
         const string expected = ("Project owner set to Smitty Werbenjägermanjensen!");
         Project testProject = new Project();
         User testUser = new User();
         testUser.firstName = "Smitty";
         testUser.lastName = "Werbenjägermanjensen";
-        testUser.isSuccess = true;
         
-        //Act
+        // Act
         string result = testProject.SetProjectOwner(testUser);
         
-        //Assert
-        Assert.That(result.Equals(expected));
-    }
-
-    [Test]
-    public void SetProjectOwner_InvalidUser_ReturnsError() {
-        
-        //Arrange
-        const string expected = "This user could not be found.";
-        Project testProject = new Project();
-        User testUser = new User();
-        testUser.isSuccess = false;
-
-        
-        //Act
-        string result = testProject.SetProjectOwner(testUser);
-        
-        //Assert
+        // Assert
         Assert.That(result.Equals(expected));
     }
 
     [Test]
     public void AddProjectMember_ValidUser_ReturnsSuccess() {
         
-        //Arrange
+        // Arrange
         const string expected = ("Luffy D. Monkey has successfully been added as a member!");
         Project testProject = new Project();
         User testUser = new User();
         testUser.firstName = "Luffy";
         testUser.middleInitial = "D";
         testUser.lastName = "Monkey";
-        testUser.isSuccess = true;
         
-        //Act
+        // Act
         string result = testProject.AddProjectMember(testUser);
         
-        //Assert
+        // Assert
         Assert.That(result.Equals(expected));
     }
     
     [Test]
-    public void AddProjectMember_InvalidUser_ReturnsError() {
+    public void AddProjectMember_AlreadyAddedUser_ReturnsError() {
         
-        //Arrange
-        const string expected = "This user could not be found.";
+        // Arrange
+        const string expected = "The member Sukehiro Yami is already in the risk list";
         Project testProject = new Project();
         User testUser = new User();
-        testUser.isSuccess = false;
-
+        testUser.firstName = "Sukehiro";
+        testUser.lastName = "Yami";
+        testProject.AddProjectMember(testUser);
         
-        //Act
-        string result = testProject.SetProjectOwner(testUser);
+        // Act
+        string result = testProject.AddProjectMember(testUser);
         
-        //Assert
+        // Assert
         Assert.That(result.Equals(expected));
     }
     
     [Test]
     public void RemoveProjectMember_ValidUser_ReturnsSuccess() {
         
-        //Arrange
-        const string expected = ("John A. Doe has successfully been removed from members!");
+        // Arrange
+        const string expected = "John A. Doe has successfully been removed from members!";
         Project testProject = new Project();
         User testUser = new User();
         testUser.firstName = "John";
         testUser.middleInitial = "A";
         testUser.lastName = "Doe";
-        testUser.isSuccess = true;
         testProject.AddProjectMember(testUser);
         
-        //Act
+        // Act
         string result = testProject.RemoveProjectMember(testUser);
         
-        //Assert
-        Assert.That(result.Equals(expected));
-    }
-    
-    [Test]
-    public void RemoveProjectMember_InvalidUser_ReturnsError() {
-        
-        //Arrange
-        const string expected = "This user could not be found.";
-        Project testProject = new Project();
-        User testUser = new User();
-        testUser.isSuccess = false;
-        
-        //Act
-        string result = testProject.RemoveProjectMember(testUser);
-        
-        //Assert
+        // Assert
         Assert.That(result.Equals(expected));
     }
     
     [Test]
     public void RemoveProjectMember_ValidUserNotInList_ReturnsError() {
         
-        //Arrange
+        // Arrange
         const string expected = "Fred Flintstone is not a member for this project.";
         Project testProject = new Project();
         User testUser = new User();
         testUser.firstName = "Fred";
         testUser.lastName = "Flintstone";
-        testUser.isSuccess = true;
         
-        //Act
+        // Act
         string result = testProject.RemoveProjectMember(testUser);
         
-        //Assert
+        // Assert
         Assert.That(result.Equals(expected));
     }
 
     [Test]
     public void DisplayProjectMembers_UserList_ReturnsSuccess() {
         
-        //Arrange
+        // Arrange
         const string expected = ("Jotaro Kujo\nGeneric J. Person\n");
         Project testProject = new Project();
         
@@ -236,31 +200,471 @@ public class ProjectUnitTests {
         
         User testUserB = new User();
         testUserB.firstName = "Generic";
-        testUserB.middleInitial = "J;";
+        testUserB.middleInitial = "J";
         testUserB.lastName = "Person";
 
         testProject.AddProjectMember(testUserA);
         testProject.AddProjectMember(testUserB);
 
         
-        //Act
+        // Act
         string result = testProject.DisplayProjectMembers();
         
-        //Assert
+        // Assert
         Assert.That(result.Equals(expected));
     }
     
     [Test]
     public void DisplayProjectMembers_NoUsers_ReturnsError() {
         
-        //Arrange
+        // Arrange
         const string expected = "There are no users for the project.";
         Project testProject = new Project();
         
-        //Act
+        // Act
         string result = testProject.DisplayProjectMembers();
         
-        //Assert
+        // Assert
         Assert.That(result.Contains(expected));
+    }
+
+    [Test]
+    public void AddProjectRisk_ValidRisk_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "Risk added successfully!";
+        Project testProject = new Project();
+        Risk testRisk = new Risk();
+
+        // Act
+        string result = testProject.AddProjectRisk(testRisk);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void AddProjectRisk_AlreadyAddedRisk_ReturnsError() {
+        
+        // Arrange
+        const string expected = "The risk 3DS Toad Circuit is already in the risk list";
+        Project testProject = new Project();
+        Risk testRisk = new Risk();
+        testRisk.setName("3DS Toad Circuit");
+        testProject.AddProjectRisk(testRisk);
+
+        // Act
+        string result = testProject.AddProjectRisk(testRisk);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void RemoveProjectRisk_ValidRisk_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "Risk successfully removed!";
+        Project testProject = new Project();
+        
+        Risk testRisk = new Risk();
+        testRisk.setName("Sample Risk A");
+        testProject.AddProjectRisk(testRisk);
+
+        // Act
+        string result = testProject.RemoveProjectRisk(testRisk);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void RemoveProjectRisk_ValidRiskNotInList_ReturnsError() {
+        
+        // Arrange
+        const string expected = "The risk Sample Risk A is not in the risk list.";
+        Project testProject = new Project();
+
+        Risk testRiskA = new Risk();
+        testRiskA.setName("Sample Risk A");
+        
+        Risk testRiskB = new Risk();
+        testRiskB.setName("Sample Risk B");
+        testProject.AddProjectRisk(testRiskB);
+
+        // Act
+        string result = testProject.RemoveProjectRisk(testRiskA);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void DisplayRisksByCondition_RiskList_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = ("Active:\n\nSample Risk D\nSample Risk B\n\n\n" +
+                                 "Mitigated:\n\nSample Risk A\nSample Risk C\n\n\n" +
+                                 "Resolved:\n\nSample Risk E\n\n\n");
+        Project testProject = new Project();
+
+        Risk testRiskA = new Risk();
+        testRiskA.setName("Sample Risk A");
+        testRiskA.ChangeRiskStatus("Mitigated");
+        
+        Risk testRiskB = new Risk();
+        testRiskB.setName("Sample Risk B");
+        testRiskB.ChangeRiskStatus("Active");
+        
+        Risk testRiskC = new Risk();
+        testRiskC.setName("Sample Risk C");
+        testRiskC.ChangeRiskStatus("Mitigated");
+        
+        Risk testRiskD = new Risk();
+        testRiskD.setName("Sample Risk D");
+        testRiskD.ChangeRiskStatus("Active");
+        
+        Risk testRiskE = new Risk();
+        testRiskE.setName("Sample Risk E");
+        testRiskE.ChangeRiskStatus("Resolved");
+
+        testProject.AddProjectRisk(testRiskD);
+        testProject.AddProjectRisk(testRiskE);
+        testProject.AddProjectRisk(testRiskB);
+        testProject.AddProjectRisk(testRiskA);
+        testProject.AddProjectRisk(testRiskC);
+        
+        // Act
+        string result = testProject.DisplayRisksByCondition();
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void DisplayRisksByCondition_NoRisks_ReturnsError() {
+        
+        // Arrange
+        const string expected = "There are no risks in the risk list.";
+        Project testProject = new Project();
+
+        // Act
+        string result = testProject.DisplayRisksByCondition();
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AssignDate_ValidStartDate_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "New start date successfully assigned!";
+        Project testProject = new Project();
+        DateTime testStartDate = new DateTime(1978, 9, 21);
+        DateTime endDate = new DateTime(2024, 9, 21);
+        testProject.AssignDate(false, endDate);
+        
+        // Act
+        string result = testProject.AssignDate(true, testStartDate);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AssignDate_InvalidStartDate_ReturnsError() {
+        
+        // Arrange
+        const string expected = "Start date must be earlier than end date!";
+        Project testProject = new Project();
+        DateTime testStartDate = new DateTime(2024, 11, 1);
+        DateTime endDate = new DateTime(2024, 10, 31);
+        testProject.AssignDate(false, endDate);
+        
+        // Act
+        string result = testProject.AssignDate(true, testStartDate);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AssignDate_ValidEndDate_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "New end date successfully assigned!";
+        Project testProject = new Project();
+        DateTime testEndDate = new DateTime(2025, 5, 20);
+        
+        // Act
+        string result = testProject.AssignDate(false, testEndDate);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AssignDate_InvalidEndDate_ReturnsError() {
+        
+        // Arrange
+        const string expected = "End date must be later than start date!";
+        Project testProject = new Project();
+        DateTime startDate = new DateTime(2010, 5, 23); //Mario Galaxy 2 release :)
+        DateTime testEndDate = new DateTime(2006, 11, 19);  //Wii launch date
+        testProject.AssignDate(false, new DateTime(2011, 6, 24));
+        testProject.AssignDate(true, startDate);
+        //This test is arranged stating that a wii title cannot be released before the wii
+        
+        // Act
+        string result = testProject.AssignDate(false, testEndDate);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AssignDate_TwoEqualDates_ReturnsError() {
+        
+        // Arrange
+        const string expected = "Start date must be earlier than end date!";
+        Project testProject = new Project();
+        DateTime testStartDate = DateTime.Today;
+        DateTime endDate = DateTime.Today;
+        testProject.AssignDate(false, endDate);
+        
+        // Act
+        string result = testProject.AssignDate(true, testStartDate);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void ChangeProjectStatus_Not_Started_ReturnsSuccess() {
+        
+        // Arrange
+        const string input = "Not started";
+        const string expectedString = "Status successfully changed!";
+        const Status expectedStatus = Status.NotStarted;
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectStatus(input);
+        
+        // Assert
+        Assert.That(result.Equals(expectedString));
+        Assert.That(testProject.projectStatus == expectedStatus);
+    }
+    
+    [Test]
+    public void ChangeProjectStatus_in_progress_ReturnsSuccess() {
+        
+        // Arrange
+        const string input = "in progress";
+        const string expectedString = "Status successfully changed!";
+        const Status expectedStatus = Status.InProgress;
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectStatus(input);
+        
+        // Assert
+        Assert.That(result.Equals(expectedString));
+        Assert.That(testProject.projectStatus == expectedStatus);
+    }
+    
+    [Test]
+    public void ChangeProjectStatus_oN_hOLd_ReturnsSuccess() {
+        
+        // Arrange
+        const string input = "oN hOLd";
+        const string expectedString = "Status successfully changed!";
+        const Status expectedStatus = Status.OnHold;
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectStatus(input);
+        
+        // Assert
+        Assert.That(result.Equals(expectedString));
+        Assert.That(testProject.projectStatus == expectedStatus);
+    }
+    
+    [Test]
+    public void ChangeProjectStatus_COMPLETED_ReturnsSuccess() {
+        
+        // Arrange
+        const string input = "COMPLETED";
+        const string expectedString = "Status successfully changed!";
+        const Status expectedStatus = Status.Completed;
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectStatus(input);
+        
+        // Assert
+        Assert.That(result.Equals(expectedString));
+        Assert.That(testProject.projectStatus == expectedStatus);
+    }
+    
+    [Test]
+    public void ChangeProjectStatus_Resolved_ReturnsError() {
+        
+        // Arrange
+        const string input = "Resolved";
+        const string expected = "That is not a valid status";
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectStatus(input);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void ChangeProjectPriority_Low_ReturnsSuccess() {
+        
+        // Arrange
+        const string input = "Low";
+        const string expectedString = "Priority changed successfully!";
+        const Priority expectedStatus = Priority.Low;
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectPriortity(input);
+        
+        // Assert
+        Assert.That(result.Equals(expectedString));
+        Assert.That(testProject.projectPriority == expectedStatus);
+    }
+    
+    [Test]
+    public void ChangeProjectPriority_medium_ReturnsSuccess() {
+        
+        // Arrange
+        const string input = "medium";
+        const string expectedString = "Priority changed successfully!";
+        const Priority expectedStatus = Priority.Medium;
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectPriortity(input);
+        
+        // Assert
+        Assert.That(result.Equals(expectedString));
+        Assert.That(testProject.projectPriority == expectedStatus);
+    }
+    
+    [Test]
+    public void ChangeProjectPriority_HIGH_ReturnsSuccess() {
+        
+        // Arrange
+        const string input = "HIGH";
+        const string expectedString = "Priority changed successfully!";
+        const Priority expectedStatus = Priority.High;
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectPriortity(input);
+        
+        // Assert
+        Assert.That(result.Equals(expectedString));
+        Assert.That(testProject.projectPriority == expectedStatus);
+    }
+    
+    [Test]
+    public void ChangeProjectPriority_crItICAl_ReturnsSuccess() {
+        
+        // Arrange
+        const string input = "crItICAl";
+        const string expectedString = "Priority changed successfully!";
+        const Priority expectedStatus = Priority.Critical;
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectPriortity(input);
+        
+        // Assert
+        Assert.That(result.Equals(expectedString));
+        Assert.That(testProject.projectPriority == expectedStatus);
+    }
+    
+    [Test]
+    public void ChangeProjectPriority_Cr1t1cal_ReturnsError() {
+        
+        // Arrange
+        const string input = "Cr1t1cal";
+        const string expected = "That is not a valid priority";
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.ChangeProjectPriortity(input);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AddRequirement_ValidFunctionalRequirement_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "Requirement successfully added!";
+        Project testProject = new Project();
+        Requirement testRequirement = new Requirement();
+        
+        // Act
+        string result = testProject.AddRequirement(true, testRequirement);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AddRequirement_ValidNonfunctionalRequirement_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "Requirement successfully added!";
+        Project testProject = new Project();
+        Requirement testRequirement = new Requirement();
+        
+        // Act
+        string result = testProject.AddRequirement(false, testRequirement);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AddRequirement_InvalidFunctionalRequirements_ReturnsError() {
+        
+        // Arrange
+        const string expected = "This requirement is already in the functional requirements list";
+        Project testProject = new Project();
+        Requirement testRequirement = new Requirement();
+        testProject.AddRequirement(true, testRequirement);
+        
+        // Act
+        string result = testProject.AddRequirement(true, testRequirement);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void AddRequirement_InvalidNonfunctionalRequirements_ReturnsError() {
+        
+        // Arrange
+        const string expected = "This requirement is already in the nonfunctional requirements list";
+        Project testProject = new Project();
+        Requirement testRequirement = new Requirement();
+        testProject.AddRequirement(false, testRequirement);
+        
+        // Act
+        string result = testProject.AddRequirement(false, testRequirement);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
     }
 }

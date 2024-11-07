@@ -4,65 +4,38 @@ public class Project {
 
     #region Attributes
     
-        private string Description { get; set; }
+    private string Description { get; set; }
     
         private User Lead {get; set;}
         private List<User> Members = new List<User>();
-        private List<Risk> Risks;
+        private List<Risk> Risks = new List<Risk>();
     
         private DateTime startDate { get; set; }
         private DateTime endDate { get; set; }
-        
-        private Status projectStatus { get; set; }
-        
-        private Priority projectPriority { get; set; }
+
+        public Status projectStatus {
+            get; 
+            private set;
+        }
+
+        public Priority projectPriority {
+            get; 
+            private set;
+        }
     
-        private List<Requirement> functionalRequirements;
-        private List<Requirement> nonfunctionalRequirements;
+        private List<Requirement> functionalRequirements = new List<Requirement>();
+        private List<Requirement> nonfunctionalRequirements = new List<Requirement>();
     
         private List<Activity> Activities = new List<Activity>();
+        
+        private DateTime totalTimeSpent { get; set; }
+        private DateTime totalEstimatedTime { get; set; }
 
         private string errorMessage { get; set; }
 
     #endregion
     
-    
-    
-    #region Helper Methods
 
-        public User FindUserByName(string name) {
-            
-            // If statement to determine that string is not empty
-            // Foreach loop traversing through list of members
-            // If found return member
-            // Otherwise return new user with errorMessage
-            
-
-            return new User();
-            // Error User should be considered
-        }
-        
-        // Master list of users should be considered
-
-        public Risk FindRiskByDescription(string descriptor) {
-
-            // Traverse through risk list
-            
-            return new Risk();
-            //Error Risk should be considered
-        }
-
-        public Risk FindRiskBySeverity(Priority severity) {
-
-            // Traverse through risk list
-            
-            return new Risk();
-        }
-        
-    
-    #endregion
-
-    
     
     #region Required Methods
     
@@ -80,11 +53,6 @@ public class Project {
         
         public string SetProjectOwner(User newLead) {
             
-            if (newLead.isSuccess == false) {
-                errorMessage = "This user could not be found.";
-                return errorMessage;
-            }
-            
             Lead = newLead;
             return ("Project owner set to " + Lead.GetFullName() + "!");
          }
@@ -93,9 +61,9 @@ public class Project {
          #region Project Member Methods
 
             public string AddProjectMember(User Member) {
-
-                if (!Member.isSuccess) {
-                    errorMessage = "This user could not be found.";
+                
+                if (Members.Contains(Member)) {
+                    errorMessage = "The member " + Member.GetFullName() + " is already in the risk list";
                     return errorMessage;
                 }
                 
@@ -104,11 +72,6 @@ public class Project {
             }
 
             public string RemoveProjectMember(User Member) {
-
-                if (!Member.isSuccess) {
-                    errorMessage = "This user could not be found.";
-                    return errorMessage;
-                }
 
                 if (Members.Contains(Member)) {
                     Members.Remove(Member);
@@ -123,9 +86,9 @@ public class Project {
 
                 string finalList = "";
 
-                if (Members.Count() == 0) {
+                if (Members.Count() != 0) {
                     foreach (User teamMember in Members) {
-                        finalList += (teamMember + "\n");
+                        finalList += (teamMember.GetFullName() + "\n");
                     }
                 }
                 else {
@@ -143,8 +106,13 @@ public class Project {
 
             public string AddProjectRisk(Risk AddedRisk) {
 
+                if (Risks.Contains(AddedRisk)) {
+                    errorMessage = "The risk " + AddedRisk.riskName + " is already in the risk list";
+                    return errorMessage;
+                }
+                
                 Risks.Add(AddedRisk);
-                return "Risk added successfully";
+                return "Risk added successfully!";
             }
 
             public string RemoveProjectRisk(Risk removeeRisk) {
@@ -170,7 +138,7 @@ public class Project {
 
                 for (int i = 0; i < 3; i++) {
                     
-                    finalList += (riskStatuses[i] + "\n\n");
+                    finalList += (riskStatuses[i] + ":\n\n");
                     
                     foreach (Risk threat in Risks) {
                         
@@ -200,6 +168,7 @@ public class Project {
                  }
                  
                  startDate = anotherDay;
+                 return "New start date successfully assigned!";
             }
             else {
                 // If start is false, method works with end date
@@ -209,9 +178,8 @@ public class Project {
                 }
                 
                 endDate = anotherDay;
+                return "New end date successfully assigned!";
             }
-           
-            return "New start date successfully assigned!";
         }
         // PREQ-1.5
 
@@ -275,28 +243,31 @@ public class Project {
         
         #region Project Requirement Methods
 
-            public void AddRequirement(bool functional, Requirement addeeRequirement) {
+            public string AddRequirement(bool functional, Requirement addeeRequirement) {
 
-                if (functional == true) {
+                if (functional) {
+                    if (functionalRequirements.Contains(addeeRequirement)) {
+                        errorMessage = "This requirement is already in the functional requirements list";
+                        return errorMessage;
+                    }
+                    
                     functionalRequirements.Add(addeeRequirement);
                 }
                 else {
+                    if (nonfunctionalRequirements.Contains(addeeRequirement)) {
+                        errorMessage = "This requirement is already in the nonfunctional requirements list";
+                        return errorMessage;
+                    }
+                    
                     nonfunctionalRequirements.Add(addeeRequirement);
                 }
+
+                return "Requirement successfully added!";
             }
             // PREQ-2.1 and 2.2
                 
         #endregion
         //PREQ-2
-
-
-        public void GetTotalProjectTime() {
-
-            foreach (Activity part in Activities) {
-                
-            }
-        }
-        
         
         
         public void GenerateReport(bool effort) {
