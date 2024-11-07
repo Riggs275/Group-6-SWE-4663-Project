@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Group-6-SWE-4663-Project/FileContentIndex/f7aa946c-e441-408b-8153-a5f4608b7fd4.vsidx
+/.vs/Group-6-SWE-4663-Project/v17/TestStore/0/000.testlog
+/.vs/Group-6-SWE-4663-Project/v17/TestStore/0
+/.vs/Group-6-SWE-4663-Project/v17
+/.vs
+/src/.vs/ProjectEvaluation
+*.v2
+/src/.vs/ProjectManager/v17
+/src/ProjectLogicUnitTests/bin/Debug/net8.0/cs
+/src/ProjectLogicUnitTests/bin/Debug/net8.0/es
+/src/ProjectLogicUnitTests/bin/Debug/net8.0/de
+/src/ProjectLogicUnitTests/bin/Debug/net8.0/fr
+/src/ProjectLogicUnitTests/bin/Debug/net8.0/it
+/src/ProjectLogicUnitTests/bin/Debug/net8.0
+/src/ProjectLogicUnitTests/bin/Release/net8.0
+/src/ProjectLogicUnitTests/obj/Debug/net8.0/ref
+/src/ProjectLogicUnitTests/obj/Debug/net8.0/refint
