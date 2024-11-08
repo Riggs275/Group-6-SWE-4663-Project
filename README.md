@@ -49,7 +49,7 @@ A web application built with Blazor that provides a user interface (UI) and hand
 
 Below is a visual representation of how the project's architecture
 
-<img src="Images/SWE 4663 Project Class Diagram v3.png" alt="A class diagram indicating the projects architecture" style="zoom;" />
+<img src="Images/SWE 4663 Class Diagram v4.png" alt="A class diagram indicating the projects architecture" style="zoom;" />
 
 
 
