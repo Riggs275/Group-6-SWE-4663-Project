@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class User
 {
+    #region attributes
     public string firstName { get; set; }
     public string middleInitial { get; set; }
     public string lastName { get; set; }
@@ -14,8 +15,9 @@ public class User
     public string roleDescription { get; set; }
     public string errorMessage { get; set; }
 
+    #endregion
 
-
+    #region constructors
     public User()
     {
         firstName = string.Empty;
@@ -27,7 +29,6 @@ public class User
         roleDescription = string.Empty;
         errorMessage = string.Empty;
     }
-    //constructor
     public User(string fN, string mI, string lN, Role job)
     {
         firstName = fN;
@@ -40,8 +41,12 @@ public class User
         errorMessage = string.Empty;
     }
 
+
+    #endregion
+
+    #region methods
     //sets new firstName middle initial and lastName
-    public string setName(string fN, string mI, string lN)
+    public string setFullName(string fN, string mI, string lN)
     {
         string fullName;
         firstName = fN;
@@ -50,38 +55,91 @@ public class User
         fullName = fN + " " + mI + " " + lN;
         return fullName;
     }
-
-    public void login(string username, string password)
+    public string setFirstName(string newFN)
     {
-        //compare username with password in database and alter a variable to being logged in state
+        if (newFN.Length > 50)
+        {
+            errorMessage = "New first name is too long, max length is 50 characters";
+            return errorMessage;
+        }
+
+        firstName = newFN;
+        return firstName;
     }
-    public void logout()
+    public string setMiddleInitial(string newMI)
     {
-        //sets current state to being a logged out state
+        if (newMI.Length > 2)
+        {
+            errorMessage = "New middle initial is too long, max length is 2 characters";
+            return errorMessage;
+        }
+
+        middleInitial = newMI;
+        return middleInitial;
+    }
+    public string setLastName(string newLN) 
+    {
+        if (newLN.Length > 50)
+        {
+            errorMessage = "New Last name is too long, max length is 50 characters";
+            return errorMessage;
+        }
+
+        lastName = newLN;
+        return lastName;
     }
 
+
+
+    /* Potential roles for users
+    Lead,           // 0
+    Developer,      // 1
+    CodeReviewer,   // 2
+    Tester,         // 3
+    Stakeholder     // 4
+     */
+
+    public string setRole(string newRole)
+    {
+        newRole = newRole.ToUpper();
+        switch (newRole)
+        {
+            case "TESTER":
+                role = Role.Tester;
+                break;
+            case "DEVELOPER":
+                role = Role.Developer;
+                break;
+            case "CODEREVIEWER":
+                role = Role.CodeReviewer;
+                break;
+            case "LEAD":
+                role = Role.Lead;
+                break;
+            case "STAKEHOLDER":
+                role = Role.Stakeholder;
+                break;
+            default:
+                errorMessage = "That is not a valid Priority";
+                return errorMessage;
+        }
+        return "Role set Correctly!";
+    }
 
     //sets the current user's role description to a new value
     public string setRoleDescription(string newRoleDescription)
     {
+        if (newRoleDescription.Length > 150)
+        {
+            errorMessage = "New description is too long, can't be more than 150 characters";
+            return errorMessage;
+        }
         roleDescription = newRoleDescription;
         return roleDescription;
     }
 
 
-    public List<User> getAllUsers()
-    {
-        List<User> listOfUsers = new List<User>();
-        //line connecting to database to run through and grab all of the users should be in a different area than in user class
-        return listOfUsers;
-    }
 
-    public User getUser(string username)
-    {
-        User foundUser = new User();
-        //line connecting to database to run through and search for a user based on the input username, should also be in the database connecting class
-        return foundUser;
-    }
     public string GetFullName()
     {
 
@@ -99,3 +157,4 @@ public class User
         return name;
     }
 }
+#endregion

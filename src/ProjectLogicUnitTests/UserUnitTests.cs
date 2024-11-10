@@ -22,7 +22,7 @@ public class UserUnitTests {
         string expectedName = "Zachary B Powell";
 
         //act
-        string resultFullName=newUser.setName("Zachary", "B", "Powell");
+        string resultFullName=newUser.setFullName("Zachary", "B", "Powell");
         //assert
         Assert.That(resultFullName.Equals(expectedName));
     }
@@ -55,5 +55,51 @@ public class UserUnitTests {
         //assert
         Assert.That(resultName.Equals(expectedName));
     }
+    [Test]
+    public void SetFirstName_FirstNameSetCorrectly_ReturnsFirstName()
+    {
+        //arrange
+        User newUser=new User();
+        string expectedName = "Zachary";
+        //act
+        string resultName = newUser.setFirstName("Zachary");
+        //assert
+        Assert.That(resultName.Equals(expectedName));
+    }
 
+    [Test]
+    public void SetMiddleInitialMiddleInitialSetCorrectly_ReturnsMiddleInitial()
+    {
+        //arrange
+        User newUser = new User();
+        string expectedName = "B";
+        //act
+        string resultName=newUser.setMiddleInitial("B");
+        //assert
+        Assert.That(resultName.Equals(expectedName));
+    }
+
+    [Test]
+    public void SetLastName_LastNameSetCorrectly_ReturnsLastName()
+    {
+        //arrange
+        User newUser = new User();
+        string expectedName = "Powell";
+        //act
+        string resultName = newUser.setLastName("Powell");
+        //assert
+        Assert.That(resultName.Equals(expectedName));
+    }
+
+    [Test]
+    public void SetNewRole_RoleChangedToInput_ReturnsRoleSetCorrectly()
+    {
+        //arrange
+        User newUser = new User();
+        string expectedString = "Role set Correctly!";
+        //act
+        string resultString=newUser.setRole("Developer");
+        //assert
+        Assert.That(resultString.Equals(expectedString));
+    }
 }
