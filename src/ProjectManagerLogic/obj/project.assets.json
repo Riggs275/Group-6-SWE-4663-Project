@@ -8,24 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\hardc\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\sgesz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Semester Project\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
+      "projectUniqueName": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
       "projectName": "ProjectManagerLogic",
-      "projectPath": "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Semester Project\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
-      "packagesPath": "C:\\Users\\hardc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Semester Project\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\obj\\",
+      "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
+      "packagesPath": "C:\\Users\\sgesz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\hardc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\sgesz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -46,6 +41,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
