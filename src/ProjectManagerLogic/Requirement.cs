@@ -1,21 +1,19 @@
 namespace ProjectManagerLogic;
-public class Requirement
-{
+public class Requirement {
 
+    #region Attributes
 
-    #region attributes
     public string description { get; set; }
-    public static int referenceNum { get; set; }
+    private static int referenceNum { get; set; }
     public Status requirementStatus;
     public Priority importance;
     public User owner;
-    public string errorMessage { get; set; }
+    private string errorMessage { get; set; }
 
     #endregion
 
     #region constructor
-    public Requirement()
-    {
+    public Requirement() {
         description = string.Empty;
         referenceNum++;
         requirementStatus = new Status();
@@ -28,25 +26,16 @@ public class Requirement
 
 
     #region methods
-    public Requirement(string desc, Priority severity, User creator)
-    {
-        description = desc;
-        referenceNum = referenceNum++;
-        importance = severity;
-        owner = creator;
-        requirementStatus = Status.NotStarted;
-        errorMessage = "";
-    }
-
-    public string SetDescription(string newDescription)
-    {
-        if (newDescription.Length >= 1001)
-        {
-            errorMessage = "Description being set is too long";
+    
+    public string SetDescription(string newDescription) {
+        
+        if (newDescription.Length >= 1001) {
+            errorMessage = "Description length cannot exceed 1,000 characters!";
             return errorMessage;
         }
+        
         description = newDescription;
-        return description;
+        return "Description saved successfully!";
     }
 
     /*
@@ -56,30 +45,33 @@ public class Requirement
         OnHold,     // 2
         Completed,  // 3
      */
-    public string setRequirementStatus(string newStatus)
-    {
-        newStatus=newStatus.ToUpper();
-        switch (newStatus)
-        {
-            case "NOTSTARTED":
+    public string setRequirementStatus(string newStatus) {
+        
+        switch (newStatus.ToUpper()) {
+            case "NOT STARTED":
                 requirementStatus = Status.NotStarted;
                 break;
 
-            case "INPROGRESS":
+            case "IN PROGRESS":
                 requirementStatus = Status.InProgress;
                 break;
-            case "ONHOLD":
+            
+            case "ON HOLD":
                 requirementStatus = Status.OnHold;
                 break;
+            
             case "COMPLETED":
                 requirementStatus = Status.Completed;
                 break;
+            
             default:
                 errorMessage = "That is not a valid status";
                 return errorMessage;
         }
+        
         return "Status successfully changed!";
     }
+    
     /*
      * potential importance statuses
          Critical,   // 0
@@ -87,11 +79,9 @@ public class Requirement
          Medium,     // 2
          Low         // 3
      */
-    public string setImportance(string newPriority)
-    {
-        newPriority = newPriority.ToUpper();
-        switch (newPriority)
-        {
+    public string setImportance(string newPriority) {
+        
+        switch (newPriority.ToUpper()) {
             case "CRITICAL":
                 importance = Priority.Critical;
                 break;
@@ -99,16 +89,20 @@ public class Requirement
             case "HIGH":
                 importance = Priority.High;
                 break;
+            
             case "MEDIUM":
                 importance = Priority.Medium;
                 break;
+            
             case "LOW":
                 importance = Priority.Low;
                 break;
+            
             default:
                 errorMessage = "That is not a valid Priority";
                 return errorMessage;
         }
+        
         return "Priority successfully changed!";
     }
     #endregion
