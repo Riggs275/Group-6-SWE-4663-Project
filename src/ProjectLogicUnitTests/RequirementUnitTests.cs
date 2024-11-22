@@ -11,7 +11,7 @@ public class RequirementUnitTests {
         Requirement newRequirement = new Requirement();
         string expectedConfirm = "Priority successfully changed!";
         //act
-        string confirmation = newRequirement.setImportance("low") ;
+        string confirmation = newRequirement.SetImportance("low") ;
         //assert
         Assert.That(confirmation.Equals(expectedConfirm));
     }
@@ -26,7 +26,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setRequirementStatus(input);
+        string result = testRequirement.SetRequirementStatus(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -43,7 +43,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setRequirementStatus(input);
+        string result = testRequirement.SetRequirementStatus(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -60,7 +60,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setRequirementStatus(input);
+        string result = testRequirement.SetRequirementStatus(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -77,7 +77,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setRequirementStatus(input);
+        string result = testRequirement.SetRequirementStatus(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -93,7 +93,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setRequirementStatus(input);
+        string result = testRequirement.SetRequirementStatus(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -109,7 +109,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setImportance(input);
+        string result = testRequirement.SetImportance(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -126,7 +126,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setImportance(input);
+        string result = testRequirement.SetImportance(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -143,7 +143,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setImportance(input);
+        string result = testRequirement.SetImportance(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -160,7 +160,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setImportance(input);
+        string result = testRequirement.SetImportance(input);
         
         // Assert
         Assert.That(result.Equals(expectedString));
@@ -176,7 +176,7 @@ public class RequirementUnitTests {
         Requirement testRequirement = new Requirement();
         
         // Act
-        string result = testRequirement.setImportance(input);
+        string result = testRequirement.SetImportance(input);
         
         // Assert
         Assert.That(result.Equals(expected));

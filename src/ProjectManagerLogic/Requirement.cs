@@ -3,11 +3,23 @@ public class Requirement {
 
     #region Attributes
 
-    public string description { get; set; }
+    public string description {
+        get; 
+        private set;
+    }
+
     private static int referenceNum { get; set; }
-    public Status requirementStatus;
-    public Priority importance;
-    public User owner;
+
+    public Status requirementStatus {
+        get;
+        private set;
+    }
+
+    public Priority importance {
+        get;
+        private set;
+    }
+    
     private string errorMessage { get; set; }
 
     #endregion
@@ -18,7 +30,6 @@ public class Requirement {
         referenceNum++;
         requirementStatus = new Status();
         importance = Priority.Low;
-        owner = new User();
         errorMessage = string.Empty;
     }
     #endregion
@@ -45,7 +56,7 @@ public class Requirement {
         OnHold,     // 2
         Completed,  // 3
      */
-    public string setRequirementStatus(string newStatus) {
+    public string SetRequirementStatus(string newStatus) {
         
         switch (newStatus.ToUpper()) {
             case "NOT STARTED":
@@ -79,7 +90,7 @@ public class Requirement {
          Medium,     // 2
          Low         // 3
      */
-    public string setImportance(string newPriority) {
+    public string SetImportance(string newPriority) {
         
         switch (newPriority.ToUpper()) {
             case "CRITICAL":
