@@ -3,12 +3,13 @@
 public class Project {
 
     #region Attributes
-    
-    private string Description { get; set; }
+
+        private static int projectNumber { get; set; }
+        private string Description { get; set; }
     
         private User Lead {get; set;}
-        private List<User> Members = new List<User>();
-        private List<Risk> Risks = new List<Risk>();
+        private List<User> Members;
+        private List<Risk> Risks;
     
         private DateTime startDate { get; set; }
         private DateTime endDate { get; set; }
@@ -22,16 +23,31 @@ public class Project {
             get; 
             private set;
         }
-    
-        private List<Requirement> functionalRequirements = new List<Requirement>();
-        private List<Requirement> nonfunctionalRequirements = new List<Requirement>();
-    
-        private List<Activity> Activities = new List<Activity>();
-        
-        private DateTime totalTimeSpent { get; set; }
-        private DateTime totalEstimatedTime { get; set; }
 
+        private List<Requirement> functionalRequirements;
+        private List<Requirement> nonfunctionalRequirements;
+
+        private List<Activity> Activities;
         private string errorMessage { get; set; }
+
+    #endregion
+
+    #region Constructor
+
+        public Project() {
+
+            projectNumber++;
+            Description = "";
+            Members = new List<User>();
+            Risks = new List<Risk>();
+            startDate = DateTime.MinValue;
+            endDate = DateTime.MaxValue;
+            functionalRequirements = new List<Requirement>();
+            nonfunctionalRequirements = new List<Requirement>();
+            Activities = new List<Activity>();
+            errorMessage = "";
+
+        }
 
     #endregion
     
@@ -265,16 +281,115 @@ public class Project {
                 return "Requirement successfully added!";
             }
             // PREQ-2.1 and 2.2
+            
+            public string DisplayRequirementsByPriority(bool functional) {
+                
+                string finalList = "";
+                string[] Priorities = { "Critical", "High", "Medium", "Low" };
+
+                if (functional) {
+                    if (functionalRequirements.Count <= 0) {
+                        errorMessage = "There are no requirements in the functional requirements list.";
+                        return errorMessage;
+                    }
+                    
+
+                    for (int i = 0; i < 4; i++) {
+                    
+                        finalList += (Priorities[i] + ":\n\n");
+                    
+                        foreach (Requirement functionalReq in functionalRequirements) {
+                        
+                            if ((int)functionalReq.importance == i) {
+                                finalList += (functionalReq.description + "\n");
+                            }
+                        
+                        }
+
+                        finalList += "\n\n";
+                    }
+                }
+                else {
+                 
+                    if (nonfunctionalRequirements.Count <= 0) {
+                        errorMessage = "There are no requirements in the nonfunctional requirements list.";
+                        return errorMessage;
+                    }
+
+                    for (int i = 0; i < 4; i++) {
+                    
+                        finalList += (Priorities[i] + ":\n\n");
+                    
+                        foreach (Requirement nonfunctionalReq in nonfunctionalRequirements) {
+                        
+                            if ((int)nonfunctionalReq.importance == i) {
+                                finalList += (nonfunctionalReq.description + "\n");
+                            }
+                        
+                        }
+
+                        finalList += "\n\n";
+                    }
+                }
+                
+                return finalList;
+            }
+            // PREQ-2.3
                 
         #endregion
         //PREQ-2
+
+        #region Project Monitoring Methods
+
+            public string AddActivity(Activity addeeActivity) {
+
+                if (Activities.Contains(addeeActivity)) {
+                    errorMessage = "This activity has already been added.";
+                    return errorMessage;
+                }
+                
+                Activities.Add(addeeActivity);
+                return "This activity has been added successfully!";
+            }
+
+            public string RemoveActivity(Activity toBeRemoved) {
+
+                if (Activities.Contains(toBeRemoved)) {
+                    Activities.Remove(toBeRemoved);
+                    return "Activity has been removed successfully";
+                }
+
+                errorMessage = "This activity wasn't in the list.";
+                return errorMessage;
+            }
+
+            public string GetTotalTime() {
+
+                if (Activities.Count <= 0) {
+                    errorMessage = "There are no activities logged.";
+                    return errorMessage;
+                }
+
+                TimeSpan totalTime = new TimeSpan();
+                Activity totalAcitivity = new Activity();
+
+                foreach (Activity loggedActivities in Activities) {
+                    totalTime = totalTime.Add(loggedActivities.CalculateTotalTimeSpent());
+                }
+
+                return totalAcitivity.GetTimeString(totalTime);
+            }
+
+            #endregion
         
-        
-        public void GenerateReport(bool effort) {
-            
-        }
-        //PREQ-4.1 & 4.2
-        
+        #endregion
+
+        #region Unrequired but not unnecessary Methods
+
+            public string GetProjectID() {
+                return ("PROJ-" + projectNumber.ToString("D4"));
+            }
+
         #endregion
 
 }

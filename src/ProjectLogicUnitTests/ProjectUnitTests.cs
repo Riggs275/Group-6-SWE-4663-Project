@@ -667,4 +667,272 @@ public class ProjectUnitTests {
         // Assert
         Assert.That(result.Equals(expected));
     }
+
+    [Test]
+    public void DisplayRequirementsByPriority_FunctionalRequirements_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = ("Critical:\n\nSample Functional A\n\n\n" +
+                                 "High:\n\nSample Functional D\nSample Functional G\n\n\n" +
+                                 "Medium:\n\nSample B\nSample E\n\n\n" +
+                                 "Low:\n\nSample Functional Requirement F\n\n\n");
+        Project testProject = new Project();
+
+        Requirement testRequirementA = new Requirement();
+        testRequirementA.SetDescription("Sample Functional A");
+        testRequirementA.SetImportance("Critical");
+        
+        Requirement testRequirementB = new Requirement();
+        testRequirementB.SetDescription("Sample B");
+        testRequirementB.SetImportance("Medium");
+        
+        Requirement testRequirementC = new Requirement();
+        testRequirementC.SetImportance("Critical");
+        
+        Requirement testRequirementD = new Requirement();
+        testRequirementD.SetDescription("Sample Functional D");
+        testRequirementD.SetImportance("High");
+        
+        Requirement testRequirementE = new Requirement();
+        testRequirementE.SetDescription("Sample E");
+        testRequirementE.SetImportance("Medium");
+        
+        Requirement testRequirementF = new Requirement();
+        testRequirementF.SetDescription("Sample Functional Requirement F");
+        testRequirementF.SetImportance("Low");
+        
+        Requirement testRequirementG = new Requirement();
+        testRequirementG.SetDescription("Sample Functional G");
+        testRequirementG.SetImportance("High");
+
+        testProject.AddRequirement(true, testRequirementA);
+        testProject.AddRequirement(true, testRequirementB);
+        testProject.AddRequirement(false, testRequirementC);
+        testProject.AddRequirement(true, testRequirementD);
+        testProject.AddRequirement(true, testRequirementE);
+        testProject.AddRequirement(true, testRequirementF);
+        testProject.AddRequirement(true, testRequirementG);
+        
+        // Act
+        string result = testProject.DisplayRequirementsByPriority(true);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void DisplayRequirementsByPriority_NoFunctionalRequirements_ReturnsError() {
+        
+        // Arrange
+        const string expected = "There are no requirements in the functional requirements list.";
+        Project testProject = new Project();
+
+        // Act
+        string result = testProject.DisplayRequirementsByPriority(true);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void DisplayRequirementsByPriority_NonfunctionalRequirements_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = ("Critical:\n\nSample B\nSample G\n\n\n" +
+                                 "High:\n\nSample A\nSample C\n\n\n" +
+                                 "Medium:\n\n\n\n" +
+                                 "Low:\n\nSample Non-Functional Requirement D\n\n\n");
+        Project testProject = new Project();
+
+        Requirement testRequirementA = new Requirement();
+        testRequirementA.SetDescription("Sample A");
+        testRequirementA.SetImportance("High");
+        
+        Requirement testRequirementB = new Requirement();
+        testRequirementB.SetDescription("Sample B");
+        testRequirementB.SetImportance("Critical");
+        
+        Requirement testRequirementC = new Requirement();
+        testRequirementC.SetDescription("Sample C");
+        testRequirementC.SetImportance("High");
+        
+        Requirement testRequirementD = new Requirement();
+        testRequirementD.SetDescription("Sample Non-Functional Requirement D");
+        testRequirementD.SetImportance("Low");
+        
+        Requirement testRequirementE = new Requirement();
+        testRequirementE.SetImportance("High");
+        
+        Requirement testRequirementF = new Requirement();
+        testRequirementF.SetImportance("Crtical");
+        
+        Requirement testRequirementG = new Requirement();
+        testRequirementG.SetDescription("Sample G");
+        testRequirementG.SetImportance("Critical");
+
+        testProject.AddRequirement(false, testRequirementA);
+        testProject.AddRequirement(false, testRequirementB);
+        testProject.AddRequirement(false, testRequirementC);
+        testProject.AddRequirement(false, testRequirementD);
+        testProject.AddRequirement(true, testRequirementE);
+        testProject.AddRequirement(true, testRequirementF);
+        testProject.AddRequirement(false, testRequirementG);
+        
+        // Act
+        string result = testProject.DisplayRequirementsByPriority(false);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void DisplayRequirementsByPriority_NoNonfunctionalRequirements_ReturnsError() {
+        
+        // Arrange
+        const string expected = "There are no requirements in the nonfunctional requirements list.";
+        Project testProject = new Project();
+
+        // Act
+        string result = testProject.DisplayRequirementsByPriority(false);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AddActivity_ValidActivity_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "This activity has been added successfully!";
+        Project testProject = new Project();
+        Activity testActivity = new Activity();
+        
+        // Act
+        string result = testProject.AddActivity(testActivity);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void AddActivity_LoggedActivity_ReturnsError() {
+        
+        // Arrange
+        const string expected = "This activity has already been added.";
+        Project testProject = new Project();
+        Activity testActivity = new Activity();
+        testProject.AddActivity(testActivity);
+        
+        // Act
+        string result = testProject.AddActivity(testActivity);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void RemoveActivity_ValidActivity_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "Activity has been removed successfully";
+        Project testProject = new Project();
+        Activity testActivity = new Activity();
+        testProject.AddActivity(testActivity);
+        
+        // Act
+        string result = testProject.RemoveActivity(testActivity);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+
+    }
+    
+    [Test]
+    public void RemoveActivity_InvalidActivity_ReturnsError() {
+        
+        // Arrange
+        const string expected = "This activity wasn't in the list.";
+        Project testProject = new Project();
+        Activity testActivity = new Activity();
+        
+        // Act
+        string result = testProject.RemoveActivity(testActivity);
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+
+    }
+
+    [Test]
+    public void GetTotalTime_ActivitiesLogged_ReturnsSuccess() {
+        
+        // Arrange
+        const string expected = "Total Time: 1d 5h 30m ";
+        Project testProject = new Project();
+        
+        User testUser = new User();
+        int[] testNumbersA = [0, 0, 3, 5];
+        int[] testNumbersB = [0, 1, 2, 25];
+
+        Activity testActivityA = new Activity();
+        testActivityA.LogTime(testUser, testNumbersA);
+
+        Activity testActivityB = new Activity();
+        testActivityB.LogTime(testUser, testNumbersB);
+
+        testProject.AddActivity(testActivityA);
+        testProject.AddActivity(testActivityB);
+        
+        // Act
+        string result = testProject.GetTotalTime();
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    public void GetTotalTime_NoActivitiesLogged_ReturnsError() {
+        
+        // Arrange
+        const string expected = "There are no activities logged.";
+        Project testProject = new Project();
+        
+        // Act
+        string result = testProject.GetTotalTime();
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+
+    }
+
+    [Test]
+    public void _GetProjectID_AnyProjectNumber_ReturnsSuccess() {
+        
+        /* When all tests run together, this test fails due to the use of static int
+         for project number. The "_" prefix allows this test to run first when all 
+         tests run together, preventing this test from failing. */
+        
+        // Arrange
+        const string expected = "PROJ-0012";
+        Project a = new Project();  // 1
+        Project b = new Project();  // 2
+        Project c = new Project();  // 3
+        Project d = new Project();  // 4
+        Project e = new Project();  // 5
+        Project f = new Project();  // 6
+        Project g = new Project();  // 7
+        Project h = new Project();  // 8
+        Project i = new Project();  // 9
+        Project j = new Project();  // 10
+        Project k = new Project();  // 11
+        
+        Project testProject = new Project();    // 12
+        
+        // Act
+        string result = testProject.GetProjectID();
+        
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
 }
