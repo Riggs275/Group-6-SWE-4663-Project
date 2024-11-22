@@ -100,7 +100,7 @@ If everything was done correctly, you should receive an output that looks identi
 Starting test execution, please wait...
 A total of 6 test files matched the specified pattern.
 
-Passed!  - Failed:     0, Passed:   , Skipped:     , Total:   , Duration: ms - ProjectLogicUnitTests.dll (net8.0)
+Passed!  - Failed:     0, Passed:   103, Skipped:     0, Total:   103, Duration: ms - ProjectLogicUnitTests.dll (net8.0)
 ```
 
 ### Executing Web Application
@@ -134,6 +134,20 @@ info: Microsoft.Hosting.Lifetime[0]
 From here, you can launch a web browser of your choice and type in the URL that the command line gave you.
 
 ## Test Coverage
+
+The Test Coverage statistics for *ProjectManagerLogic* and *ProjectLogicUnitTests* are as follows:
+
+**Unit Test Success:** <img src="Images/Unit Test Success.png" alt="The final set of unit tests all succeeding" style="zoom;" />
+
+
+
+**Unit Test Coverage:**
+
+ <img src="Images/Unit Test Coverage.png" alt="The final set of Unit Tests and how many statements the covered in the system" style="zoom;" />
+
+99.31% Statement Coverage was achieved for the *ProjectManagerLogic* module and 100% Statement Coverage was achieved for the *ProjectLogicUnitTests* module. Altogether, 99.7% Statement Coverage has been achieved.
+
+
 
 
 ## Final Video Presentation
