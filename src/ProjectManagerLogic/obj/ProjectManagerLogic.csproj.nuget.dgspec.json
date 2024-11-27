@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {}
+    "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
+    "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
+        "projectUniqueName": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
         "projectName": "ProjectManagerLogic",
-        "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
+        "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
         "packagesPath": "C:\\Users\\sgesz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\obj\\",
+        "outputPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sgesz\\AppData\\Roaming\\NuGet\\NuGet.Config",

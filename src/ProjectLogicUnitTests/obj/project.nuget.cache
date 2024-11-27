@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w8+lSBTp9kY=",
+  "dgSpecHash": "Bzf3N9yPQ4w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj",
+  "projectFilePath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sgesz\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\sgesz\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",
