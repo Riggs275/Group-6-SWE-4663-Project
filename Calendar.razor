@@ -1,0 +1,93 @@
+﻿@page "/calendar"
+
+<h1>Calendar</h1>
+
+<div class="calendar-container">
+    <div class="header">Calendar</div>
+    <div class="days-row">
+        <div class="day">Sunday</div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+    </div>
+
+    @for (int week = 1; week <= 4; week++)
+    {
+        <div class="week-row">
+            <div class="week-label">Week @week</div>
+            @for (int day = 1; day <= 7; day++)
+            {
+                <div class="day-cell"></div>
+            }
+        </div>
+    }
+
+    <button class="enter-button">Enter</button>
+</div>
+
+<style>
+    .calendar-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f4d4a6;
+        padding: 20px;
+        border-radius: 8px;
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .header {
+        font-size: 24px;
+        margin-bottom: 10px;
+        background-color: #d16969;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .days-row, .week-row {
+        display: flex;
+        width: 100%;
+    }
+
+    .day, .day-cell {
+        flex: 1;
+        border: 1px solid black;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .day {
+        font-weight: bold;
+        background-color: #ffffff;
+    }
+
+    .week-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color: #e6e6e6;
+        width: 60px;
+        font-weight: bold;
+    }
+
+    .enter-button {
+        margin-top: 20px;
+        background-color: #87ceeb;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+        .enter-button:hover {
+            background-color: #5fa7c3;
+        }
+</style>
