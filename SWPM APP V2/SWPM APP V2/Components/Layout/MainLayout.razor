@@ -1,0 +1,73 @@
+﻿@inherits LayoutComponentBase
+
+<div class="main-layout">
+    <nav class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><NavLink href="login" class="nav-link" Match="NavLinkMatch.All">Login</NavLink></li>
+            <li><NavLink href="project-dashboard" class="nav-link">Project Dashboard</NavLink></li>
+            
+            <li><NavLink href="calendar" class="nav-link">Calendar</NavLink></li>
+            <li><NavLink href="manager" class="nav-link">Manager Control</NavLink></li>
+            <li><NavLink href="current-projects" class="nav-link">Current Projects</NavLink></li>
+            <li><NavLink href="future-projects" class="nav-link">Future Projects</NavLink></li>
+            <li><NavLink href="completed-projects" class="nav-link">Completed Projects</NavLink></li>
+            
+        </ul>
+    </nav>
+
+    <div class="content">
+        @Body
+    </div>
+</div>
+
+<style>
+    .main-layout {
+        display: flex;
+        height: 100vh;
+    }
+
+    .sidebar {
+        width: 250px;
+        background-color: #f4d7b2;
+        padding: 20px;
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+
+        .sidebar h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+    .nav-link {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        padding: 10px;
+        display: block;
+        border-radius: 4px;
+        background-color: #63c2d0;
+        color: white;
+        text-align: center;
+    }
+
+        .nav-link:hover {
+            background-color: #56a5b2;
+        }
+
+    .content {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+    }
+</style>

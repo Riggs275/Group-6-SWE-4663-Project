@@ -1,0 +1,33 @@
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\appsettings.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\SWPM_APP_V2.staticwebassets.runtime.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\SWPM_APP_V2.staticwebassets.endpoints.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\SWPM_APP_V2.exe
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\SWPM_APP_V2.deps.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\SWPM_APP_V2.runtimeconfig.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\SWPM_APP_V2.dll
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\bin\Debug\net8.0\SWPM_APP_V2.pdb
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\SWPM APP V2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\SWPM APP V2.AssemblyInfoInputs.cache
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\SWPM APP V2.AssemblyInfo.cs
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\SWPM APP V2.csproj.CoreCompileInputs.cache
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\SWPM_APP_V2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\scopedcss\bundle\SWPM_APP_V2.styles.css
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\scopedcss\projectbundle\SWPM_APP_V2.bundle.scp.css
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets\msbuild.SWPM_APP_V2.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets\msbuild.SWPM_APP_V2.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets\msbuild.build.SWPM_APP_V2.props
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SWPM_APP_V2.props
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SWPM_APP_V2.props
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\SWPM_APP_V2.dll
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\refint\SWPM_APP_V2.dll
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\SWPM_APP_V2.pdb
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\SWPM APP V2.genruntimeconfig.cache
+C:\Users\montg\Desktop\SWPM APP V2\SWPM APP V2\obj\Debug\net8.0\ref\SWPM_APP_V2.dll

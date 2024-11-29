@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SWPM_APP_V2.props" />
+</Project>

@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\montg\\Desktop\\SWPM APP V2\\SWPM APP V2\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SWPM_APP_V2.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SWPM_APP_V2.qfx4a2t04g.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\montg\\Desktop\\SWPM APP V2\\SWPM APP V2\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\montg\\Desktop\\SWPM APP V2\\SWPM APP V2\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\montg\\Desktop\\SWPM APP V2\\SWPM APP V2\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\montg\\Desktop\\SWPM APP V2\\SWPM APP V2\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SWPM_APP_V2.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SWPM_APP_V2.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SWPM_APP_V2.props",
+      "PackagePath": "build\\SWPM_APP_V2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SWPM_APP_V2.props",
+      "PackagePath": "buildMultiTargeting\\SWPM_APP_V2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SWPM_APP_V2.props",
+      "PackagePath": "buildTransitive\\SWPM_APP_V2.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,120 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+
+@* Page title *@
+<h3>Software Management System</h3>
+
+@* Container for the login form *@
+<div class="container">
+    <div class="header-bar"></div>
+
+    <h1>Login</h1>
+
+    <form @onsubmit="HandleLogin">
+        <input type="text" class="input-field" placeholder="Username" @bind="username" required>
+        <input type="password" class="input-field" placeholder="Password" @bind="password" required>
+        <button type="submit" class="enter-button">Enter</button>
+    </form>
+
+    <button @onclick="ForgotPassword" class="forgot-link">Forgot Password or Username</button>
+
+    @* Show error message if login fails *@
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <p class="error-message">@errorMessage</p>
+    }
+</div>
+
+@code {
+    private string username = string.Empty;
+    private string password = string.Empty;
+    private string errorMessage = string.Empty;
+
+    private async Task HandleLogin()
+    {
+        if (username == "admin" && password == "password") // Sample credentials for testing
+        {
+            // Redirect or perform actions upon successful login
+            errorMessage = string.Empty;
+            // Replace with actual navigation or action
+            Console.WriteLine("Login successful!");
+        }
+        else
+        {
+            // Show error message on failed login
+            errorMessage = "Invalid username or password.";
+        }
+    }
+
+    private void ForgotPassword()
+    {
+        // Handle forgot password logic here
+        errorMessage = "Forgot password feature is not implemented.";
+    }
+}
+
+<style>
+    body {
+        background-color: #f4d7b2;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        text-align: center;
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .header-bar {
+        background-color: #e46356;
+        height: 20px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .enter-button, .forgot-link {
+        background-color: #63c2d0;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .input-field {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .forgot-link {
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+    .error-message {
+        color: red;
+        font-size: 14px;
+    }
+</style>
