@@ -1,0 +1,91 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProjectManagerWebApp
+build_property.RootNamespace = ProjectManagerWebApp
+build_property.ProjectDir = C:\Users\hardc\Desktop\Labs\SWE 4663 (Software Project Management)\Project\src\ProjectManagerWebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\hardc\Desktop\Labs\SWE 4663 (Software Project Management)\Project\src\ProjectManagerWebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/Calendar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYWxlbmRhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/CompletedProject.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb21wbGV0ZWRQcm9qZWN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/CompletedProjects.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb21wbGV0ZWRQcm9qZWN0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/CurrentProjects.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXJyZW50UHJvamVjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/FutureProjects.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGdXR1cmVQcm9qZWN0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/Manager.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/ProjectDashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQcm9qZWN0RGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/ProjectList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQcm9qZWN0TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-hjd6qusd1i
+
+[C:/Users/hardc/Desktop/Labs/SWE 4663 (Software Project Management)/Project/src/ProjectManagerWebApp/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-vird7fjv32
