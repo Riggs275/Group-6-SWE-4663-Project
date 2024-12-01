@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj": {}
+    "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj": {
+    "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj",
+        "projectUniqueName": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj",
         "projectName": "ProjectLogicUnitTests",
-        "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj",
+        "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectLogicUnitTests\\ProjectLogicUnitTests.csproj",
         "packagesPath": "C:\\Users\\sgesz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectLogicUnitTests\\obj\\",
+        "outputPath": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectLogicUnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sgesz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
-                "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj"
+              "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
+                "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
+    "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
+        "projectUniqueName": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
         "projectName": "ProjectManagerLogic",
-        "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
+        "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj",
         "packagesPath": "C:\\Users\\sgesz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sgesz\\Source\\Repos\\Group-6-SWE-4663-Project2\\src\\ProjectManagerLogic\\obj\\",
+        "outputPath": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sgesz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -132,6 +132,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

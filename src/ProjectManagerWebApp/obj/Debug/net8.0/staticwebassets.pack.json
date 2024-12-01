@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerWebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProjectManagerWebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ProjectManagerWebApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerWebApp\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerWebApp\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerWebApp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerWebApp\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProjectManagerWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ProjectManagerWebApp.props",
+      "PackagePath": "build\\ProjectManagerWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ProjectManagerWebApp.props",
+      "PackagePath": "buildMultiTargeting\\ProjectManagerWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ProjectManagerWebApp.props",
+      "PackagePath": "buildTransitive\\ProjectManagerWebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

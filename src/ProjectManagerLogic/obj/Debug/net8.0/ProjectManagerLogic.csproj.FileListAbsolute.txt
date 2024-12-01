@@ -22,3 +22,16 @@ C:\Users\sgesz\Source\Repos\Group-6-SWE-4663-Project2\src\ProjectManagerLogic\ob
 C:\Users\sgesz\Source\Repos\Group-6-SWE-4663-Project2\src\ProjectManagerLogic\obj\Debug\net8.0\refint\ProjectManagerLogic.dll
 C:\Users\sgesz\Source\Repos\Group-6-SWE-4663-Project2\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.pdb
 C:\Users\sgesz\Source\Repos\Group-6-SWE-4663-Project2\src\ProjectManagerLogic\obj\Debug\net8.0\ref\ProjectManagerLogic.dll
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\bin\Debug\net8.0\ProjectManagerLogic.deps.json
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\bin\Debug\net8.0\ProjectManagerLogic.dll
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\bin\Debug\net8.0\ProjectManagerLogic.pdb
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.csproj.AssemblyReference.cache
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.AssemblyInfoInputs.cache
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.AssemblyInfo.cs
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.csproj.CoreCompileInputs.cache
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.sourcelink.json
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.dll
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\refint\ProjectManagerLogic.dll
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ProjectManagerLogic.pdb
+C:\Users\sgesz\Source\Repos\Riggs275\Group-6-SWE-4663-Project\src\ProjectManagerLogic\obj\Debug\net8.0\ref\ProjectManagerLogic.dll

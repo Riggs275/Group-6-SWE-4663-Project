@@ -734,24 +734,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hardc\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\sgesz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Project\\src\\ProjectManagerWebApp\\ProjectManagerWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerWebApp\\ProjectManagerWebApp.csproj",
       "projectName": "ProjectManagerWebApp",
-      "projectPath": "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Project\\src\\ProjectManagerWebApp\\ProjectManagerWebApp.csproj",
-      "packagesPath": "C:\\Users\\hardc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Project\\src\\ProjectManagerWebApp\\obj\\",
+      "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerWebApp\\ProjectManagerWebApp.csproj",
+      "packagesPath": "C:\\Users\\sgesz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerWebApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\hardc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\sgesz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -766,8 +761,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
-              "projectPath": "C:\\Users\\hardc\\Desktop\\Labs\\SWE 4663 (Software Project Management)\\Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj"
+            "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj": {
+              "projectPath": "C:\\Users\\sgesz\\Source\\Repos\\Riggs275\\Group-6-SWE-4663-Project\\src\\ProjectManagerLogic\\ProjectManagerLogic.csproj"
             }
           }
         }
@@ -776,6 +771,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -806,7 +806,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.111/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
