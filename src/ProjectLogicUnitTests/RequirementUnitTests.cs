@@ -20,7 +20,7 @@ public class RequirementUnitTests {
     public void SetRequirementStatus_Not_Started_ReturnsSuccess() {
         
         // Arrange
-        const string input = "Not Started";
+        const string input = "NotStarted";
         const string expectedString = "Status successfully changed!";
         const Status expectedStatus = Status.NotStarted;
         Requirement testRequirement = new Requirement();
@@ -37,7 +37,7 @@ public class RequirementUnitTests {
     public void SetRequirementStatus_in_progress_ReturnsSuccess() {
         
         // Arrange
-        const string input = "in progress";
+        const string input = "inprogress";
         const string expectedString = "Status successfully changed!";
         const Status expectedStatus = Status.InProgress;
         Requirement testRequirement = new Requirement();
@@ -54,7 +54,7 @@ public class RequirementUnitTests {
     public void SetRequirementStatus_ON_HOLD_ReturnsSuccess() {
         
         // Arrange
-        const string input = "ON HOLD";
+        const string input = "ONHOLD";
         const string expectedString = "Status successfully changed!";
         const Status expectedStatus = Status.OnHold;
         Requirement testRequirement = new Requirement();

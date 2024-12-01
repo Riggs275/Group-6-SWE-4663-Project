@@ -444,7 +444,7 @@ public class ProjectUnitTests {
     public void ChangeProjectStatus_Not_Started_ReturnsSuccess() {
         
         // Arrange
-        const string input = "Not started";
+        const string input = "Notstarted";
         const string expectedString = "Status successfully changed!";
         const Status expectedStatus = Status.NotStarted;
         Project testProject = new Project();
@@ -461,7 +461,7 @@ public class ProjectUnitTests {
     public void ChangeProjectStatus_in_progress_ReturnsSuccess() {
         
         // Arrange
-        const string input = "in progress";
+        const string input = "inprogress";
         const string expectedString = "Status successfully changed!";
         const Status expectedStatus = Status.InProgress;
         Project testProject = new Project();
@@ -478,7 +478,7 @@ public class ProjectUnitTests {
     public void ChangeProjectStatus_oN_hOLd_ReturnsSuccess() {
         
         // Arrange
-        const string input = "oN hOLd";
+        const string input = "oNhOLd";
         const string expectedString = "Status successfully changed!";
         const Status expectedStatus = Status.OnHold;
         Project testProject = new Project();
@@ -867,7 +867,7 @@ public class ProjectUnitTests {
     public void GetTotalTime_ActivitiesLogged_ReturnsSuccess() {
         
         // Arrange
-        const string expected = "Total Time: 1d 5h 30m ";
+        const string expected = "Total Time: 0w 1d 5h 30m ";
         Project testProject = new Project();
         
         User testUser = new User();

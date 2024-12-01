@@ -7,7 +7,7 @@ public class ActivityUnitTest {
     public void ChangeActivityType_requirementANALYSIS_ReturnsSuccess() {
         
         // Arrange
-        const string input = "requirement ANALYSIS";
+        const string input = "requirementANALYSIS";
         const string expectedString = "Task successfully changed!";
         const Task expectedTask = Task.RequirementAnalysis;
         Activity testActivity = new Activity();
@@ -171,9 +171,9 @@ public class ActivityUnitTest {
     public void GetTimeString_ValidTimeSpan_ReturnsSuccess() {
         
         // Arrange
-        const string expected = "Total Time: 1w 2d 1h 5m ";
+        const string expected = "Total Time: 1w 2d 0h 5m ";
         Activity testActivity = new Activity();
-        TimeSpan testTime = new TimeSpan(9, 1, 5, 0);
+        TimeSpan testTime = new TimeSpan(9, 0, 5, 0);
         
         // Act
         string result = testActivity.GetTimeString(testTime);

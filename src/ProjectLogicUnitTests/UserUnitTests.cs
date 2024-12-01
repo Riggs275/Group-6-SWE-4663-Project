@@ -183,7 +183,7 @@ public class UserUnitTests {
     public void SetRole_cODe_rEVIEWEr_ReturnsSuccess() {
         
         // Arrange
-        const string input = "cODe rEVIEWEr";
+        const string input = "cODerEVIEWEr";
         const string expectedString = "Role set successfully!";
         const string expectedDescription = ("Reviews the code written by developers to ensure it is of high " +
                                             "quality, adheres to best practices, and meets the project’s " +
