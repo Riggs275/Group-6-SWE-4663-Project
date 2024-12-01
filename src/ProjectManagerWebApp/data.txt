@@ -1,0 +1,8 @@
+Us|Jotaro||Kujo|StarPlatinum5|Developer
+Us|Eugene|H|Krabs||Lead
+Us|Sheldon|J|Plankton||Stakeholder
+Ri|Risk 1|This is a risk description!|Resolved
+Ri|Risk 2|This risk level is over 9000!!!|Active
+Re|Uhh here is another descripton|0|NotStarted|Critical
+Re|IDK anymore, I'm tired|1|NotStarted|Low
+Pr|Descriptor|JK001|2|EK002|SP003|1|002|01/11/2000|08/02/2032|OnHold|Completed|2|T|1|F|0

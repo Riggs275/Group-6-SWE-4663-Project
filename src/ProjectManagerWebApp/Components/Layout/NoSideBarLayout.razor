@@ -1,0 +1,12 @@
+﻿@inherits LayoutComponentBase
+@using ProjectManagerLogic
+@{
+    DataManager dataManager = new DataManager();
+    dataManager.ImportData("data.txt");
+
+}
+<div class="page">
+    <div class="content px-4">
+        @Body
+    </div>
+</div>

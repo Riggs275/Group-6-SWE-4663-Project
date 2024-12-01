@@ -1,8 +1,14 @@
-﻿@page "/current-projects"
+﻿@using ProjectManagerLogic
+@page "/current-projects"
+@rendermode InteractiveServer
+@{
+}
+
+
 <h3>Current Projects</h3>
 <div class="project-section">
     <div class="project-list">
-        <div class="project-item selected">Project</div>
+        <div class="project-item selected">@projectId</div>
         <div class="project-details">
             <p><strong>Project Description:</strong></p>
             <p><strong>Requirements:</strong></p>
@@ -20,6 +26,7 @@
     <div class="action-buttons">
         <button class="action-button">Back</button>
         <button class="action-button">Export</button>
+        <button @onclick="_=>ChangeNow()">Import</button>
         <button class="action-button">Cancel</button>
         <button class="action-button">Save</button>
     </div>
@@ -28,3 +35,19 @@
 <style>
     /* Reuse the styling from the previous components */
 </style>
+@code {
+
+    string projectId = "Project: ";
+    string description = "Description: ";
+
+    DataManager _dataManager = new DataManager();
+
+    public void ChangeNow()
+    {
+        projectId = "Hello";
+        description = "Project Description: Try Something.";
+    }
+
+
+
+}

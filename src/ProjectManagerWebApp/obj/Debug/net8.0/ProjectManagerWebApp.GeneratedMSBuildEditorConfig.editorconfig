@@ -22,6 +22,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Layout/NoSideBarLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTm9TaWRlQmFyTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/Calendar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYWxlbmRhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,10 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/Manager.razor]

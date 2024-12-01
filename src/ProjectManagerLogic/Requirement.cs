@@ -8,7 +8,7 @@ public class Requirement {
         private set;
     }
 
-    private static int referenceNum { get; set; }
+    private int referenceNum { get; set; }
 
     public Status requirementStatus {
         get;
@@ -27,7 +27,7 @@ public class Requirement {
     #region constructor
     public Requirement() {
         description = string.Empty;
-        referenceNum++;
+        referenceNum = 0;
         requirementStatus = new Status();
         importance = Priority.Low;
         errorMessage = string.Empty;
@@ -114,14 +114,19 @@ public class Requirement {
         
         return "Priority successfully changed!";
     }
+    public int SetReferenceNumber(int referenceNumber)
+    {
+        referenceNum = referenceNumber;
+        return referenceNumber;
+    }
     #endregion
     
     #region That Region for Extra Methods that are needed
 
     // I am very tired
 
-    public string GetReferenceNumber() {
-        return referenceNum.ToString("D3");
+    public int GetReferenceNumber() {
+        return referenceNum;
     }
 
     #endregion

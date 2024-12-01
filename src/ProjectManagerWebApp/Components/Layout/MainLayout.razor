@@ -1,14 +1,22 @@
 ﻿@inherits LayoutComponentBase
+@using ProjectManagerLogic
+@using Task = System.Threading.Tasks.Task
+@inject NavigationManager Navigation
 
+@{
+    DataManager dataManager = new DataManager();
+    dataManager.ImportData("data.txt");
+
+}
 <div class="main-layout">
     <nav class="sidebar">
         <h2>Navigation</h2>
         <ul>
-            <li><NavLink href="login" class="nav-link" Match="NavLinkMatch.All">Login</NavLink></li>
+            <li><NavLink href="\" class="nav-link" Match="NavLinkMatch.All">Log out</NavLink></li>
             <li><NavLink href="project-dashboard" class="nav-link">Project Dashboard</NavLink></li>
 
             <li><NavLink href="calendar" class="nav-link">Calendar</NavLink></li>
-            <li><NavLink href="manager" class="nav-link">Manager Control</NavLink></li>
+             <li><NavLink href="manager" class="nav-link">Manager Control</NavLink></li>
             <li><NavLink href="current-projects" class="nav-link">Current Projects</NavLink></li>
             <li><NavLink href="future-projects" class="nav-link">Future Projects</NavLink></li>
             <li><NavLink href="completed-projects" class="nav-link">Completed Projects</NavLink></li>
@@ -71,3 +79,10 @@
         overflow-y: auto;
     }
 </style>
+@code{
+        public void onLoad()
+        {
+         
+
+    }
+}

@@ -10,11 +10,11 @@ public class DataManager {
 
     #region Master Lists
 
-    public List<User> userMasterList;
-    public List<Project> projectMasterList;
-    public List<Activity> activityMasterList;
-    public List<Requirement> requirementMasterList;
-    public List<Risk> riskMasterList;
+    public List<User> userMasterList = new List<User>();
+    public List<Project> projectMasterList= new List<Project>();
+    public List<Activity> activityMasterList = new List<Activity>(); 
+    public List<Requirement> requirementMasterList= new List<Requirement>();
+    public List<Risk> riskMasterList= new List<Risk>();
 
     #endregion
     
@@ -59,14 +59,15 @@ public class DataManager {
         string[] data = line.Split(delimiterChar);
         int index = requirementMasterList.Count;
 
-        if (data.Length == 4) {
+        if (data.Length == 5) {
             
             requirementMasterList.Add(new Requirement());
 
             requirementMasterList[index].SetDescription(data[1]);
-            requirementMasterList[index].SetRequirementStatus(data[2]);
-            requirementMasterList[index].SetImportance(data[3]);
-            // Reference Number will be set on declaration
+            requirementMasterList[index].SetReferenceNumber(Convert.ToInt32(data[2]));
+            requirementMasterList[index].SetRequirementStatus(data[3]);
+            requirementMasterList[index].SetImportance(data[4]);
+           
         }
     }
 
@@ -143,34 +144,33 @@ public class DataManager {
 
                 int riskEnumerator = j + 5 + memberEnumIndex;
                 projectMasterList[listIndex].AddProjectRisk(GetRisk(data[riskEnumerator]));
-                postIndex = riskEnumerator + 1;
+                postIndex = riskEnumerator;
             }
 
             projectMasterList[listIndex].AssignDate(true, DateTime.Parse(data[postIndex]));
-            projectMasterList[listIndex].AssignDate(false, DateTime.Parse(data[postIndex + 1]));
+            projectMasterList[listIndex].AssignDate(false, DateTime.Parse(data[postIndex ]));
             projectMasterList[listIndex].ChangeProjectStatus(data[postIndex + 2]);
             projectMasterList[listIndex].ChangeProjectPriortity(data[postIndex + 3]);
 
-            /*
             int functionalReqEnumIndex = Convert.ToInt16(data[postIndex + 4]);
             int x = postIndex;
 
-            for (int k = 0; k <= functionalReqEnumIndex; k++) {
+            for (int k = 0; k <= functionalReqEnumIndex; k+=2) {
 
-                int functionalEnumerator = k + 5 + x;
+                int functionalEnumerator = k + 4 + x;
                 // x exists so postIndex doesn't turn into a really high number breaking the array
 
                 if (data[functionalEnumerator + 1].Equals("T")) {
                     projectMasterList[listIndex].AddRequirement(true, 
-                        GetRequirement(data[functionalEnumerator + 2]));
+                        GetRequirement(Convert.ToInt32(data[functionalEnumerator + 2])));
                 }
                 else {
                     projectMasterList[listIndex].AddRequirement(false, 
-                        GetRequirement(data[functionalEnumerator + 2]));
+                        GetRequirement(Convert.ToInt32(data[functionalEnumerator + 2])));
                 }
                 
             }
-            */
+         
 
         }
         
@@ -184,9 +184,9 @@ public class DataManager {
 
             while ((line = reader.ReadLine()) != null) {
 
-                switch (line.Substring(0, 1)) {
+                switch (line.Substring(0,2)) {
                     
-                    case "P":
+                    case "Pr":
                         ImportProjects(line);
                         break;
                     
@@ -198,7 +198,7 @@ public class DataManager {
                         ImportRisk(line);
                         break;
                     
-                    case "U":
+                    case "Us":
                         ImportUser(line);
                         break;
                 }
@@ -294,11 +294,11 @@ public class DataManager {
         return new Risk();
     }
 
-    public Requirement GetRequirement(string referenceNumber) {
+    public Requirement GetRequirement(int referenceNumber) {
 
         foreach (Requirement req in requirementMasterList) {
 
-            if (req.GetReferenceNumber().Equals(referenceNumber)) {
+            if (req.GetReferenceNumber()==referenceNumber) {
                 return req;
             }
         }

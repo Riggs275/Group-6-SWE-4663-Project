@@ -1,4 +1,8 @@
 ﻿@page "/project-dashboard"
+@using ProjectManagerLogic
+@using Task = System.Threading.Tasks.Task
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
 
 <div class="dashboard-container">
     <h2>Project Management</h2>
@@ -6,13 +10,14 @@
     <h3>Dashboard</h3>
 
     <div class="project-options">
-        <button class="project-button">Projects in Progress</button>
-        <button class="project-button">Future Projects</button>
-        <button class="project-button">Current Projects</button>
-        <button class="project-button">Calendar</button>
+        <button class="project-button"><NavLink href="current-projects">Projects in Progress</NavLink></button>
+        <button class="project-button"><NavLink href="FutureProjects">Future projects</NavLink></button>
+        <button class="project-button"><NavLink href="CompletedProjects">Completed Projects</NavLink></button>
+        <button class="project-button"><NavLink href="Calendar">Calendar</NavLink></button>
+        
     </div>
 
-    <button class="sign-out-button">Sign Out</button>
+    <button class="sign-out-button"><NavLink href="Home">Sign Out</NavLink></button>
 </div>
 
 <style>

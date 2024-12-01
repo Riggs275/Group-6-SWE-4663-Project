@@ -1,5 +1,10 @@
 ﻿@page "/"
-
+@using ProjectManagerLogic
+@using Task = System.Threading.Tasks.Task
+@using Layout
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@layout NoSideBarLayout
 <PageTitle>Home</PageTitle>
 
 
@@ -28,18 +33,25 @@
 </div>
 
 @code {
+
     private string username = string.Empty;
     private string password = string.Empty;
     private string errorMessage = string.Empty;
 
     private async Task HandleLogin()
     {
-        if (username == "admin" && password == "password") // Sample credentials for testing
+        DataManager dataManager = new DataManager();
+        dataManager.ImportData("data.txt");
+        User currentUser = new User();
+        if (username != null) {currentUser = dataManager.GetUser(username); }
+        if ((username == "admin" && password == "password")||(username==currentUser.username&&password==currentUser.password)) // Sample credentials for testing
         {
             // Redirect or perform actions upon successful login
             errorMessage = string.Empty;
             // Replace with actual navigation or action
+
             Console.WriteLine("Login successful!");
+            Navigation.NavigateTo("/project-dashboard");
         }
         else
         {
@@ -56,6 +68,7 @@
 }
 
 <style>
+    
     body {
         background-color: #f4d7b2;
         font-family: Arial, sans-serif;
