@@ -1,6 +1,6 @@
 # Group 6 KSU SWE 4663 Software Project Management
 
-This repository contains all the code, documentation, and other resources related to the Software Project Management (SWE 4663) semester project. 
+This repository contains all the code, documentation, and other resources related to the Software Project Management (SWE-4663) semester project. 
 
 ## Table of Contents
 - [Team Members](#Team-Members)
@@ -78,7 +78,14 @@ This is a cross-platform application and it should work on Windows 10+, Mac OS, 
 cd Desktop/Group-6-SWE-4663-Project/src
 dotnet build
 ```
+Assuming you did everything right you should see something similar to the output below.
 
+```Bash
+  7 Warning(s)
+  0 Error(s)
+
+Time Elapsed: 00:00:22.84
+```
 
 From here you can run the Unit Tests or Web Application!
 
@@ -98,9 +105,9 @@ If everything was done correctly, you should receive an output that looks identi
 
 ```Bash
 Starting test execution, please wait...
-A total of 6 test files matched the specified pattern.
+A total of 1 test files matched the specified pattern.
 
-Passed!  - Failed:     0, Passed:   103, Skipped:     0, Total:   103, Duration: ms - ProjectLogicUnitTests.dll (net8.0)
+Passed!  - Failed:     0, Passed:   103, Skipped:     0, Total:   103, Duration: 109ms - ProjectLogicUnitTests.dll (net8.0)
 ```
 
 ### Executing Web Application
@@ -146,8 +153,6 @@ The Test Coverage statistics for *ProjectManagerLogic* and *ProjectLogicUnitTest
  <img src="Images/Unit Test Coverage.png" alt="The final set of Unit Tests and how many statements the covered in the system" style="zoom;" />
 
 99.31% Statement Coverage was achieved for the *ProjectManagerLogic* module and 100% Statement Coverage was achieved for the *ProjectLogicUnitTests* module. Altogether, 99.7% Statement Coverage has been achieved.
-
-
 
 
 ## Final Video Presentation
