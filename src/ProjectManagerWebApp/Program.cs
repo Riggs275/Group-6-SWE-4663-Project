@@ -1,14 +1,7 @@
 using ProjectManagerWebApp.Components;
-using Microsoft.EntityFrameworkCore;
 using ProjectManagerLogic;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Register DbContext with MySQL provider
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), 
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
-
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
