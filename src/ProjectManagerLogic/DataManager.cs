@@ -129,7 +129,7 @@ public class DataManager {
             // data [3] is # of members
             int memberEnumIndex = Convert.ToInt32(data[3]);
             
-            for (int i = 0; i <= memberEnumIndex; i++) {
+            for (int i = 0; i <= memberEnumIndex - 1; i++) {
 
                 projectMasterList[listIndex].AddProjectMember(GetUser(data[4 + i]));
                 // 4 since i starts at 0
@@ -200,6 +200,9 @@ public class DataManager {
                     
                     case "Us":
                         ImportUser(line);
+                        break;
+                    
+                    default:
                         break;
                 }
             }
@@ -281,7 +284,7 @@ public class DataManager {
 
         foreach (User associate in userMasterList) {
 
-            if (associate.username.ToUpper().Equals(username.ToUpper())) {
+            if (associate.username.ToUpper().Contains(username.ToUpper())) {
                 return associate;
             }
         }
