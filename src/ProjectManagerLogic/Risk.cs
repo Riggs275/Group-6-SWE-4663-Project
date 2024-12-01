@@ -8,13 +8,30 @@ public class Risk {
             get; 
             private set; 
         }
-        private string Description { get; set; }
+
+        public string Description {
+            get; 
+            private set;
+        }
         public Status Condition {
             get; 
             private set;
         }
+        
+        private static int riskID { get; set; }
         private string errorMessage { get; set; }
         
+    #endregion
+    
+    #region Constructor
+
+    public Risk() {
+
+        riskName = string.Empty;
+        Description = string.Empty;
+        riskID++;
+    }
+    
     #endregion
     
     #region Required Methods
@@ -26,7 +43,7 @@ public class Risk {
                 return errorMessage;
             }
 
-            Description = newDescription;
+            Description = newDescription.Replace('|', '_');
             return "Description saved successfully!";
         }
         // PREQ-1.4.2 & 1.4.3
@@ -58,7 +75,6 @@ public class Risk {
     
     #endregion
     
-    
     #region Unrequired (but not unnecessary) Methods
 
         public string setName(string name) {
@@ -68,8 +84,12 @@ public class Risk {
                 return errorMessage;
             }
 
-            riskName = name;
+            riskName = name.Replace('|', '_');
             return "Name saved successfully!";
+        }
+        
+        public string GetRiskCode() {
+            return riskID.ToString("D3");
         }
     
     #endregion

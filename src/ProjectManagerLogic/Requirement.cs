@@ -33,9 +33,7 @@ public class Requirement {
         errorMessage = string.Empty;
     }
     #endregion
-
-
-
+    
     #region methods
     
     public string SetDescription(string newDescription) {
@@ -45,7 +43,7 @@ public class Requirement {
             return errorMessage;
         }
         
-        description = newDescription;
+        description = newDescription.Replace('|', '_');
         return "Description saved successfully!";
     }
 
@@ -59,15 +57,15 @@ public class Requirement {
     public string SetRequirementStatus(string newStatus) {
         
         switch (newStatus.ToUpper()) {
-            case "NOT STARTED":
+            case "NOTSTARTED":
                 requirementStatus = Status.NotStarted;
                 break;
 
-            case "IN PROGRESS":
+            case "INPROGRESS":
                 requirementStatus = Status.InProgress;
                 break;
             
-            case "ON HOLD":
+            case "ONHOLD":
                 requirementStatus = Status.OnHold;
                 break;
             
@@ -116,5 +114,15 @@ public class Requirement {
         
         return "Priority successfully changed!";
     }
+    #endregion
+    
+    #region That Region for Extra Methods that are needed
+
+    // I am very tired
+
+    public string GetReferenceNumber() {
+        return referenceNum.ToString("D3");
+    }
+
     #endregion
 }

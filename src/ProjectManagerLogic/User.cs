@@ -18,6 +18,8 @@ public class User {
         get; 
         private set;
     }
+    
+    private static int userIdentifier { get; set; }
     private string errorMessage { get; set; }
 
     #endregion
@@ -56,7 +58,7 @@ public class User {
             return errorMessage;
         }
 
-        firstName = newFN;
+        firstName = newFN.Replace('|', '_');
         return "User first name set successfully!";
     }
     
@@ -67,7 +69,7 @@ public class User {
             return errorMessage;
         }
 
-        middleInitial = newMI;
+        middleInitial = newMI.Replace('|', '_');
         return "User middle initial set successfully!";
     }
     
@@ -78,7 +80,7 @@ public class User {
             return errorMessage;
         }
 
-        lastName = newLN;
+        lastName = newLN.Replace('|', '_');
         return "User last name set successfully!";
     }
 
@@ -111,7 +113,7 @@ public class User {
                                    "efficiency of the project.");
                 break;
             
-            case "CODE REVIEWER":
+            case "CODEREVIEWER":
                 userRole = Role.CodeReviewer;
                 roleDescription = ("Reviews the code written by developers to ensure it is of high " +
                                    "quality, adheres to best practices, and meets the project’s " +
@@ -155,5 +157,15 @@ public class User {
         return (firstName + " " + middleInitial + ". " + lastName);
     }
     
+    #endregion
+    
+    #region Not Stated (but required) Methods
+
+    public void SetUsername() {
+        username = (firstName.Substring(0, 1).ToUpper() + 
+                    lastName.Substring(0, 1).ToUpper() + 
+                    userIdentifier.ToString("D3"));
+    }
+
     #endregion
 }

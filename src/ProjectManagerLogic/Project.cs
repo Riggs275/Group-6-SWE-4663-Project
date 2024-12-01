@@ -5,14 +5,29 @@ public class Project {
     #region Attributes
 
         private static int projectNumber { get; set; }
-        private string Description { get; set; }
-    
-        private User Lead {get; set;}
-        private List<User> Members;
-        private List<Risk> Risks;
-    
-        private DateTime startDate { get; set; }
-        private DateTime endDate { get; set; }
+
+        public string Description {
+            get; 
+            private set;
+        }
+
+        public User Lead {
+            get; 
+            private set;
+        }
+        
+        public List<User> Members;
+        public List<Risk> Risks;
+
+        public DateTime startDate {
+            get; 
+            private set;
+        }
+
+        public DateTime endDate {
+            get; 
+            private set;
+        }
 
         public Status projectStatus {
             get; 
@@ -24,8 +39,8 @@ public class Project {
             private set;
         }
 
-        private List<Requirement> functionalRequirements;
-        private List<Requirement> nonfunctionalRequirements;
+        public List<Requirement> functionalRequirements;
+        public List<Requirement> nonfunctionalRequirements;
 
         private List<Activity> Activities;
         private string errorMessage { get; set; }
@@ -51,8 +66,6 @@ public class Project {
 
     #endregion
     
-
-    
     #region Required Methods
     
         public string SetDescription(string input) {
@@ -62,7 +75,7 @@ public class Project {
                 return errorMessage;
             }
 
-            Description = input;
+            Description = input.Replace('|', '_');
             return "Description saved successfully!";
         }
         // PREQ-1.1
@@ -202,15 +215,15 @@ public class Project {
         public string ChangeProjectStatus(string newStatus) {
 
             switch (newStatus.ToUpper()) {
-                case "NOT STARTED":
+                case "NOTSTARTED":
                     projectStatus = Status.NotStarted;
                     break;
                 
-                case "IN PROGRESS":
+                case "INPROGRESS":
                     projectStatus = Status.InProgress;
                     break;
                 
-                case "ON HOLD":
+                case "ONHOLD":
                     projectStatus = Status.OnHold;
                     break;
                 
@@ -384,12 +397,12 @@ public class Project {
         
         #endregion
 
-        #region Unrequired but not unnecessary Methods
+    #region Unrequired but not unnecessary Methods
 
-            public string GetProjectID() {
-                return ("PROJ-" + projectNumber.ToString("D4"));
-            }
+        public string GetProjectID() {
+            return ("PROJ-" + projectNumber.ToString("D4"));
+        }
 
-        #endregion
+    #endregion
 
 }

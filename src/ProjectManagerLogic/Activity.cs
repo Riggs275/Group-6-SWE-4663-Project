@@ -24,16 +24,30 @@ public class Activity {
         
         private List<TimeLog> loggedTime = new List<TimeLog>();
 
+        public int loggedTimeCount {
+            get; 
+            private set;
+        }
+        
+        private static int activityID { get; set; }
         private string errorMessage { get; set; }
 
     #endregion
 
+    #region Constructor
+
+        public Activity() {
+            activityID++;
+        }
+
+    #endregion
+    
     #region Methods
     
         public string ChangeActivityType(string taskType) {
             
             switch (taskType.ToUpper()) { 
-                case "REQUIREMENT ANALYSIS":
+                case "REQUIREMENTANALYSIS":
                     activityType = Task.RequirementAnalysis;
                     break;
                 
@@ -119,6 +133,7 @@ public class Activity {
 
 
             loggedTime.Add(new TimeLog(Member, timeToBeLogged));
+            loggedTimeCount++;
             
             return "Time logged successfully!";
         }
@@ -130,22 +145,42 @@ public class Activity {
                 string finalTime = "";
 
                 if (allTime.Days > 7) {
-                    finalTime += ((allTime.Days / 7) + "w ");
+                    finalTime += ((allTime.Days / 7));
                     allTime = allTime.Subtract(TimeSpan.FromDays(7));
                 }
+                else {
+                    finalTime += "0";
+                }
+
+                finalTime += "w ";
                 // TimeSpan doesn't have a built in week value
 
                 if (allTime.TotalHours >= 24) {
-                    finalTime += (allTime.Days +"d ");
+                    finalTime += (allTime.Days);
                 }
+                else {
+                    finalTime += "0";
+                }
+
+                finalTime += "d ";
 
                 if ((allTime.TotalMinutes >= 60) && (allTime.Hours != 0)) {
-                    finalTime += (allTime.Hours + "h ");
+                    finalTime += (allTime.Hours);
+                }
+                else {
+                    finalTime += "0";
                 }
 
+                finalTime += "h ";
+
                 if ((allTime.Minutes != 0) && (allTime.TotalSeconds != 0)) {
-                    finalTime += (allTime.Minutes + "m ");
+                    finalTime += (allTime.Minutes);
                 }
+                else {
+                    finalTime += "0";
+                }
+
+                finalTime += "m ";
 
                 return ("Total Time: " + finalTime);
             }
@@ -208,6 +243,14 @@ public class Activity {
         
         #endregion
         
+
+    #endregion
+
+    #region The Methods that are needed but not defined
+
+        public string GetActivityID() {
+            return activityID.ToString("D3");
+        }
 
     #endregion
 }
