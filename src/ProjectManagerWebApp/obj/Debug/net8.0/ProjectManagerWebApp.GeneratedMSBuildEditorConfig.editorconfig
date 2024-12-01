@@ -54,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/New Project.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOZXcgUHJvamVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/ProjectDashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQcm9qZWN0RGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

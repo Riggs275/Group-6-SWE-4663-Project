@@ -1,10 +1,7 @@
 ﻿@using ProjectManagerLogic
-@page "/current-projects"
+@page "/New-Projects"
 @rendermode InteractiveServer
 @{
-    DataManager dataManager = new DataManager();
-    dataManager.ImportData("data.txt");
-
 }
 
 
@@ -13,13 +10,13 @@
     <div class="project-list">
         <div class="project-item selected">@projectId</div>
         <div class="project-details">
-            <p><strong>Project Description:</strong></p>
+            <p><strong>Project Description:</strong><textarea rows="1" cols=" 50"></textarea></p>
             <p><strong>Requirements:</strong></p>
-            <p><strong>Owner:</strong></p>
+            <p><strong>Owner:</strong><textarea rows="1" cols=" 50"></textarea></p>
             <p><strong>Users:</strong></p>
             <p><strong>Access Level:</strong></p>
             <p><strong>Progress Report:</strong></p>
-            <p><strong>Is Completed? Y/N ___</strong></p>
+            <p><strong>Is Completed? Y/N ___</strong><textarea rows="1" cols=" 1"></textarea></p>
         </div>
     </div>
     <div class="project-notes">

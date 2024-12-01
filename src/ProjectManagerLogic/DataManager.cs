@@ -233,7 +233,7 @@ public class DataManager {
             }
 
             foreach (Requirement loggedReq in requirementMasterList) {
-                string requirementData = ("Re|" + $"{loggedReq.description}|" +
+                string requirementData = ("Re|" + $"{loggedReq.description}|" +$"{loggedReq.GetReferenceNumber()}|"+
                                           $"{loggedReq.requirementStatus.ToString()}|" +
                                           $"{loggedReq.importance.ToString()}");
                 writer.WriteLine(requirementData);
@@ -255,8 +255,15 @@ public class DataManager {
 
                 projectData += ($"{proj.startDate.ToString("MM/dd/yyyy")}|" +
                                 $"{proj.endDate.ToString("MM/dd/yyyy")}|" +
-                                $"{proj.projectStatus.ToString()}|{proj.projectPriority.ToString()}");
-                
+                                $"{proj.projectStatus.ToString()}|{proj.projectPriority.ToString()}|");
+                projectData += ($"{proj.functionalRequirements.Count+proj.nonfunctionalRequirements.Count}");
+                for (int k=0;k<proj.functionalRequirements.Count;k++) { 
+                    projectData += ($"|T|{proj.functionalRequirements[k].GetReferenceNumber()}|"); 
+                }
+                for (int k = 0; k < proj.nonfunctionalRequirements.Count; k++)
+                {
+                    projectData += ($"|F|{proj.nonfunctionalRequirements[k].GetReferenceNumber()}|");
+                }
                 writer.WriteLine(projectData);
             }
             
