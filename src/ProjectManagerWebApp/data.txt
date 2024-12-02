@@ -1,9 +1,10 @@
-Us|Jotaro||Kujo|StarPlatinum5|Developer
-Us|Eugene|H|Krabs|Money|Lead
-Us|Sheldon|J|Plankton|Chum|Stakeholder
-Ri|Risk 1|This is a risk description!|Resolved
-Ri|Risk 2|This risk level is over 9000!!!|Active
+U|Jotaro||Kujo|JK000|StarPlatinum5Developer
+U|Eugene|H|Krabs|EK000|MoneyLead
+U|Sheldon|J|Plankton|SP000|ChumStakeholder
+Ri|Risk 1|This is a risk description!Resolved
+Ri|Risk 2|This risk level is over 9000!!!Active
 Re|Here is another descripton|0|NotStarted|Critical
 Re|Random Description|1|NotStarted|Low
-Pr|Descriptor|JK000|3|JK000|EK|SP|1|002|01/11/2000|08/02/2032|OnHold|Low|2|T|1|F|0
-Pr|Another Description|EK|1|EK|1|001|05/05/2025|09/02/2039|InProgress|High|2|T|1|F|0
+P|Descriptor|JK000|3|JK000|EK000|SP000|2|029|029|01/11/2000|12/31/9999|OnHold|Low|2|T|1||F|0|
+P|Another Description|EK000|1|EK000|2|029|029|05/05/2025|12/31/9999|InProgress|High|2|T|1||F|0|
+P|Description||1||0|02/15/1999|02/16/2000|NotStarted|Critical|0

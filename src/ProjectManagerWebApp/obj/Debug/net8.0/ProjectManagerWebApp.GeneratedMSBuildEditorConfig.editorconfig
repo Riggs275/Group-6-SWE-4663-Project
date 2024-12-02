@@ -26,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTm9TaWRlQmFyTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/AddProjects.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRQcm9qZWN0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/Calendar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYWxlbmRhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,20 +46,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/FutureProjects.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGdXR1cmVQcm9qZWN0cy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/Manager.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/New Project.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOZXcgUHJvamVjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sgesz/Source/Repos/Riggs275/Group-6-SWE-4663-Project/src/ProjectManagerWebApp/Components/Pages/ProjectDashboard.razor]

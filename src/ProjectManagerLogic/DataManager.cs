@@ -216,11 +216,6 @@ public class DataManager {
 
     public void SaveProjectsToFile(string filePath) {
 
-        string directory = Path.GetDirectoryName(filePath);
-        if (!Directory.Exists(directory)) {
-            Directory.CreateDirectory(directory);
-        }
-
         using (StreamWriter writer = new StreamWriter(filePath)) {
             foreach (var loggeduser in userMasterList) {
                 string userData = ("U|" + $"{loggeduser.firstName}|{loggeduser.middleInitial}|" +
