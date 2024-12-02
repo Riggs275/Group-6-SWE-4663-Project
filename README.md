@@ -156,3 +156,5 @@ The Test Coverage statistics for *ProjectManagerLogic* and *ProjectLogicUnitTest
 
 
 ## Final Video Presentation
+
+[Please view the project's final presentation on YouTube](https://youtu.be/U4y2dwB0N7Y)
