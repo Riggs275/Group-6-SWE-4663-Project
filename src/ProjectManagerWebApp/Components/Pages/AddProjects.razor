@@ -1,0 +1,71 @@
+﻿@page "/Add-projects"
+@using ProjectManagerLogic
+@using Task = System.Threading.Tasks.Task
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<h3>Add Projects</h3>
+<div class="project-section">
+    <div class="project-list">
+        <div class="project-item selected">Project</div>
+        <div class="project-details">
+            <form @onsubmit="AddNewProject">
+                <input type="text" class="input-field" placeholder="Description" @bind="Description" required>
+                <input type="text" class="input-field" placeholder="Lead Username" @bind="LeadUN" required>
+                <input type="text" class="input-field" placeholder="Add Member" @bind="AddeeMember">
+                <input type="text" class="input-field" placeholder="Start Date" @bind="StartDate">
+                <input type="text" class="input-field" placeholder="Start Date" @bind="EndDate">
+            </form>
+            <p><strong>Requirements:</strong></p>
+            <p><strong>Owner:</strong></p>
+            <p><strong>Users:</strong></p>
+            <p><strong>Access Level:</strong></p>
+            <p><strong>Progress Report:</strong></p>
+            <p><strong>Is Completed? Y/N ___</strong></p>
+        </div>
+    </div>
+    <div class="project-notes">
+        <p><strong>Notes:</strong></p>
+        <textarea rows="15" cols="50"></textarea>
+    </div>
+    <div class="action-buttons">
+        <button class="action-button">Back</button>
+        <button class="action-button">Export</button>
+        <button class="action-button">Cancel</button>
+        <button class="action-button">Save</button>
+    </div>
+</div>
+
+<style>
+    /* Reuse the styling from the previous component */
+</style>
+
+@code {
+
+    private string Description = "";
+    private string LeadUN = "";
+    private string AddeeMember = "";
+    private string StartDate = "";
+    private string EndDate = "";
+    private string Status = "";
+    private string Priority = "";
+
+
+    public void AddNewProject() {
+        DataManager addManager = new DataManager();
+        addManager.ImportData("data.txt");
+
+        int Count = addManager.projectMasterList.Count;
+        
+        addManager.projectMasterList.Add(new Project());
+
+        addManager.projectMasterList[Count].SetDescription(Description);
+        addManager.projectMasterList[Count].SetProjectOwner(addManager.GetUser(LeadUN));
+        addManager.projectMasterList[Count].AddProjectMember(addManager.GetUser(AddeeMember));
+        addManager.projectMasterList[Count].AssignDate(true, DateTime.Parse(StartDate));
+        addManager.projectMasterList[Count].AssignDate(false, DateTime.Parse(EndDate));
+        addManager.projectMasterList[Count].ChangeProjectStatus(Status);
+        addManager.projectMasterList[Count].ChangeProjectPriortity(Priority);
+    }
+
+}
