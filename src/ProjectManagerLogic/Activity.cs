@@ -245,7 +245,7 @@ public class Activity {
 
     #endregion
     
-
+    #region Unrequired Methods
         public string GetActivityID() {
             return activityID.ToString("D3");
         }
