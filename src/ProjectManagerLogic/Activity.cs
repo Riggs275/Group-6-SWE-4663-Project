@@ -74,7 +74,7 @@ public class Activity {
             
             return "Task successfully changed!";
         }
-        //PREQ-3.2.2
+        
         
         public string SetEstimatedTime(int[] TimeValues) {
             
@@ -112,7 +112,6 @@ public class Activity {
         public string LogTime(User Member, int[] TimeLogged) {
             
             // Method works near identically to SetEstimatedTime()
-            // excepts logs time into list
 
             if (TimeLogged.Length != 4) {
                 errorMessage = "Incorrect amount of numbers taken in!";
@@ -245,8 +244,7 @@ public class Activity {
         
 
     #endregion
-
-    #region The Methods that are needed but not defined
+    
 
         public string GetActivityID() {
             return activityID.ToString("D3");
